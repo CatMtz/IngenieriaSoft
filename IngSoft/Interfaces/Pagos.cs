@@ -16,5 +16,12 @@ namespace IngSoft.Interfaces
         {
             InitializeComponent();
         }
+
+        private void Pagos_Load(object sender, EventArgs e)
+        {
+            txtFecha.Text = DateTime.Now.ToString();
+        }
+
+       
     }
 }
