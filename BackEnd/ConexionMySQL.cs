@@ -22,14 +22,14 @@ namespace BackEnd
             String puerto = "3306";
             String usuario = "root";
             String password = "root";
-            String database = "ProyectoBD";
+            String database = "ingsoft";
             //Cadena de conexion
 
             return String.Format("server={0};port={1};user id={2}; password={3}; database={4}", servidor, puerto, usuario, password, database);
         }
         /// <summary>
         /// Este metodo se manda llamar en las consultas que se 
-        /// realizaran o en los comandos de modificación para ejecutar la sentencia
+        /// realizaran en los comandos de modificación para ejecutar la sentencia
         /// </summary>
         /// <param name="sqlCom"></param>
         public void EjecutaSQLComando(MySqlCommand sqlCom)

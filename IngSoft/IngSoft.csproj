@@ -52,11 +52,29 @@
     <Compile Include="Interfaces\AñadirCliente.Designer.cs">
       <DependentUpon>AñadirCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Editar.cs">
+    <Compile Include="Interfaces\Control de acceso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Editar.Designer.cs">
-      <DependentUpon>Editar.cs</DependentUpon>
+    <Compile Include="Interfaces\Control de acceso.Designer.cs">
+      <DependentUpon>Control de acceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\EditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\EditarProducto.Designer.cs">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NuevaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NuevaVenta.Designer.cs">
+      <DependentUpon>NuevaVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Pagos.cs">
       <SubType>Form</SubType>
@@ -69,6 +87,24 @@
     </Compile>
     <Compile Include="Interfaces\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ReporteDeudas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ReporteDeudas.Designer.cs">
+      <DependentUpon>ReporteDeudas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ReporteProductosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ReporteProductosVendidos.Designer.cs">
+      <DependentUpon>ReporteProductosVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ReporteVentasMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ReporteVentasMes.Designer.cs">
+      <DependentUpon>ReporteVentasMes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
