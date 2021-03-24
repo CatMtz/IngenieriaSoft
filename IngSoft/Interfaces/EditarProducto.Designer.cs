@@ -1,6 +1,6 @@
 ﻿namespace IngSoft.Interfaces
 {
-    partial class Editar
+    partial class EditarProducto
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IngSoft.Interfaces
 {
-    public partial class Editar : Form
+    public partial class EditarProducto : Form
     {
-        public Editar()
+        public EditarProducto()
         {
             InitializeComponent();
         }
