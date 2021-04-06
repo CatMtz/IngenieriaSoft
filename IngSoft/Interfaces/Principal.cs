@@ -16,5 +16,10 @@ namespace IngSoft.Interfaces
         {
             InitializeComponent();
         }
+
+        private void btnCerrarsesion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

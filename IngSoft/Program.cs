@@ -17,7 +17,7 @@ namespace IngSoft
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pagos());
+            Application.Run(new Principal());
         }
     }
 }
