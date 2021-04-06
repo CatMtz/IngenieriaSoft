@@ -1,0 +1,5 @@
+Color de fondo:Silver
+Texto normal:arial 11
+Titulos: Arial 16
+Anchor: Izquierdo (Solo en caso de ser necesrio) sino derecho y arriba unicamente
+Tabindex: Secuencia de acuerdo al orden de los elementos de izquierda a derecha
