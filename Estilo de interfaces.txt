@@ -1,4 +1,6 @@
 Color de fondo:Silver
+Botones de salir:Rojo
+Color botones:Silver
 Texto normal:arial 11
 Titulos: Arial 16
 Anchor: Izquierdo (Solo en caso de ser necesrio) sino derecho y arriba unicamente
