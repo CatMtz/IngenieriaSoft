@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
--- Host: localhost    Database: ingsoft
+-- Host: 127.0.0.1    Database: ingsoft
 -- ------------------------------------------------------
 -- Server version	8.0.19
 
@@ -27,9 +27,8 @@ CREATE TABLE `cliente` (
   `Nombre` varchar(30) NOT NULL,
   `Telefono` varchar(10) NOT NULL,
   `Direccion` varchar(40) NOT NULL,
-  `Producto` varchar(40) NOT NULL,
   PRIMARY KEY (`IdCliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,33 +37,8 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES (1,'Omar Martinez','4451223569','Prol. 5 de mayo #129'),(2,'jesica solorio','123456890','panindicuaro');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `credito`
---
-
-DROP TABLE IF EXISTS `credito`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `credito` (
-  `idCredito` int NOT NULL AUTO_INCREMENT,
-  `idCliente` int NOT NULL,
-  `NombreCliente` varchar(45) NOT NULL,
-  `MontoTotal` decimal(10,2) NOT NULL,
-  `Pagos` text NOT NULL,
-  PRIMARY KEY (`idCredito`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `credito`
---
-
-LOCK TABLES `credito` WRITE;
-/*!40000 ALTER TABLE `credito` DISABLE KEYS */;
-/*!40000 ALTER TABLE `credito` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -75,14 +49,14 @@ DROP TABLE IF EXISTS `detalleproducto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `detalleproducto` (
-  `idCompra` int NOT NULL,
-  `idProducto` int NOT NULL,
   `precio` decimal(10,2) NOT NULL,
   `cantidad` int NOT NULL,
-  KEY `producto_idx` (`idProducto`),
-  KEY `Compra_idx` (`idCompra`),
-  CONSTRAINT `Compra` FOREIGN KEY (`idCompra`) REFERENCES `ventas` (`idCompra`),
-  CONSTRAINT `producto` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`IdProducto`)
+  `idCompra` int NOT NULL,
+  `IdProducto` int NOT NULL,
+  PRIMARY KEY (`idCompra`,`IdProducto`),
+  KEY `fk_detalleproducto_producto1_idx` (`IdProducto`),
+  CONSTRAINT `fk_detalleproducto_producto1` FOREIGN KEY (`IdProducto`) REFERENCES `producto` (`IdProducto`),
+  CONSTRAINT `fk_detalleproducto_venta1` FOREIGN KEY (`idCompra`) REFERENCES `venta` (`idCompra`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -123,29 +97,30 @@ INSERT INTO `gerente` VALUES (1,'Luis Fernando','Rojas Martinez','ChitoRM','Chit
 UNLOCK TABLES;
 
 --
--- Table structure for table `log_registro`
+-- Table structure for table `pagos`
 --
 
-DROP TABLE IF EXISTS `log_registro`;
+DROP TABLE IF EXISTS `pagos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `log_registro` (
-  `IdRegistro` int NOT NULL AUTO_INCREMENT,
-  `Usuario` varchar(45) NOT NULL,
-  `Fecha` varchar(45) NOT NULL,
-  `Abono` decimal(10,2) NOT NULL,
-  `Faltante` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`IdRegistro`)
+CREATE TABLE `pagos` (
+  `idPago` int NOT NULL AUTO_INCREMENT,
+  `Fecha` datetime NOT NULL,
+  `idCompra` int NOT NULL,
+  `Cantidad` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`idPago`),
+  KEY `fk_Pagos_venta1_idx` (`idCompra`),
+  CONSTRAINT `fk_Pagos_venta1` FOREIGN KEY (`idCompra`) REFERENCES `venta` (`idCompra`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `log_registro`
+-- Dumping data for table `pagos`
 --
 
-LOCK TABLES `log_registro` WRITE;
-/*!40000 ALTER TABLE `log_registro` DISABLE KEYS */;
-/*!40000 ALTER TABLE `log_registro` ENABLE KEYS */;
+LOCK TABLES `pagos` WRITE;
+/*!40000 ALTER TABLE `pagos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pagos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -186,19 +161,17 @@ CREATE TABLE `venta` (
   `idCompra` int NOT NULL AUTO_INCREMENT,
   `IdGerente` int NOT NULL,
   `IdCliente` int NOT NULL,
-  `idCredito` int NOT NULL,
-  `NombreUsuario` varchar(50) NOT NULL,
   `Descripcion` text NOT NULL,
   `Cantidad_Venta` decimal(10,2) NOT NULL,
   `Tipo` enum('Credito','Contado') NOT NULL,
+  `Saldo` decimal(10,2) NOT NULL,
+  `Fecha` datetime NOT NULL,
   PRIMARY KEY (`idCompra`),
   KEY `compra` (`IdGerente`),
   KEY `Cliente_idx` (`IdCliente`),
-  KEY `Credito_idx` (`idCredito`),
   CONSTRAINT `Cliente` FOREIGN KEY (`IdCliente`) REFERENCES `cliente` (`IdCliente`),
-  CONSTRAINT `Credito` FOREIGN KEY (`idCredito`) REFERENCES `credito` (`idCredito`),
   CONSTRAINT `Usuario` FOREIGN KEY (`IdGerente`) REFERENCES `gerente` (`IdGerente`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,6 +180,7 @@ CREATE TABLE `venta` (
 
 LOCK TABLES `venta` WRITE;
 /*!40000 ALTER TABLE `venta` DISABLE KEYS */;
+INSERT INTO `venta` VALUES (6,1,1,'PAW PATROL CANTIMPLORA M1',60.00,'Credito',60.00,'2021-04-06 17:17:30'),(7,1,2,'BOTELLA AVENGERS',35.00,'Credito',35.00,'2021-04-06 17:35:29');
 /*!40000 ALTER TABLE `venta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,4 +197,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-10 13:30:47
+-- Dump completed on 2021-04-11 19:49:54

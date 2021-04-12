@@ -58,17 +58,17 @@
     <Compile Include="Interfaces\Control de acceso.Designer.cs">
       <DependentUpon>Control de acceso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\EditarCliente.cs">
+    <Compile Include="Interfaces\EditCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\EditarCliente.Designer.cs">
-      <DependentUpon>EditarCliente.cs</DependentUpon>
+    <Compile Include="Interfaces\EditCliente.Designer.cs">
+      <DependentUpon>EditCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\EditarProducto.cs">
+    <Compile Include="Interfaces\EditProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\EditarProducto.Designer.cs">
-      <DependentUpon>EditarProducto.cs</DependentUpon>
+    <Compile Include="Interfaces\EditProducto.Designer.cs">
+      <DependentUpon>EditProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\NuevaVenta.cs">
       <SubType>Form</SubType>
@@ -88,6 +88,12 @@
     <Compile Include="Interfaces\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\ReporteDeudas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,19 +106,31 @@
     <Compile Include="Interfaces\ReporteProductosVendidos.Designer.cs">
       <DependentUpon>ReporteProductosVendidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\ReporteVentasMes.cs">
+    <Compile Include="Interfaces\R_VentaMes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\ReporteVentasMes.Designer.cs">
-      <DependentUpon>ReporteVentasMes.cs</DependentUpon>
+    <Compile Include="Interfaces\R_VentaMes.Designer.cs">
+      <DependentUpon>R_VentaMes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaces\EditCliente.resx">
+      <DependentUpon>EditCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\EditProducto.resx">
+      <DependentUpon>EditProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Pagos.resx">
       <DependentUpon>Pagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\R_VentaMes.resx">
+      <DependentUpon>R_VentaMes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +153,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackEnd\BackEnd.csproj">
+      <Project>{022d24bd-d328-4699-b2b9-a43bed8415d1}</Project>
+      <Name>BackEnd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tipo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

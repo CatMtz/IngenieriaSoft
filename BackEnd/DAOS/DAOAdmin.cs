@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BackEnd.MODELOS
+namespace BackEnd.DAOS
 {
   public  class DAOAdmin
     {
