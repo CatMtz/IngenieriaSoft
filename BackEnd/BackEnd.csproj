@@ -54,9 +54,13 @@
     <Compile Include="DAOS\DAOAdmin.cs" />
     <Compile Include="DAOS\DAOCliente.cs" />
     <Compile Include="DAOS\DAOProducto.cs" />
+    <Compile Include="DAOS\DAOReporte.cs" />
     <Compile Include="MODELOS\Admin.cs" />
     <Compile Include="MODELOS\Cliente.cs" />
     <Compile Include="MODELOS\Producto.cs" />
+    <Compile Include="MODELOS\ReporteProductosVendidos.cs" />
+    <Compile Include="MODELOS\ReporteVentaMes.cs" />
+    <Compile Include="MODELOS\ReporteDeudas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
