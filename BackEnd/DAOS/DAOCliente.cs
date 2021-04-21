@@ -11,7 +11,10 @@ namespace BackEnd.DAOS
 {
    public class DAOCliente
     {
-
+        /// <summary>
+        /// Obtencion de todos los clientes registrados
+        /// </summary>
+        /// <returns></returns>
         public List<Cliente> getAll()
         {
             try
@@ -19,7 +22,8 @@ namespace BackEnd.DAOS
                 List<Cliente> lista = new List<Cliente>();
                 ConexionMySQL con = new ConexionMySQL();
 
-                DataSet dat = con.LLenaComboGrid("SELECT c.*,v.Saldo as Deuda_Total FROM Cliente c join venta v on c.idcliente=v.idcliente" + ";");
+                DataSet dat = con.LLenaComboGrid("SELECT c.*,v.Saldo as Deuda_Total "+
+                    " FROM Cliente c join venta v on c.idcliente=v.idcliente group by c.idcliente order by idCliente" + ";");
                 DataTable dt = dat.Tables[0];
                 Cliente datos;
                 foreach (DataRow r in dt.Rows)
@@ -42,30 +46,28 @@ namespace BackEnd.DAOS
             }
 
         }
-
-        public List<Cliente> getOne(int id)
+        /// <summary>
+        /// Obtenemos los datos de un cliente en especificio mediante un id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Cliente getOne(int id)
         {
             try
             {
-                List<Cliente> lista = new List<Cliente>();
+                Cliente datos = new Cliente();
                 ConexionMySQL con = new ConexionMySQL();
 
                 DataSet dat = con.LLenaComboGrid("SELECT * FROM Cliente where idCliente =" + id + ";");
                 DataTable dt = dat.Tables[0];
-                Cliente datos;
                 foreach (DataRow r in dt.Rows)
                 {
-                    datos = new Cliente();
                     datos.IdCliente = (int)r.ItemArray[0];
                     datos.Nombre = (String)r.ItemArray[1];
                     datos.Telefono = (String)r.ItemArray[2];
                     datos.Direccion = (String)r.ItemArray[3];
-                    
-
-
-                    lista.Add(datos);
                 }
-                return lista;
+                return datos;
             }
             catch (Exception ex)
             {
@@ -73,7 +75,11 @@ namespace BackEnd.DAOS
             }
         }
 
-        //Registrar Nuevo Cliente
+        /// <summary>
+        /// Registrar Nuevo Cliente
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public bool registrar(Cliente obj)
         {
             try
@@ -101,48 +107,13 @@ namespace BackEnd.DAOS
 
         }
 
-        //Verificar Cliente registrado (LOGIN)
-        public Cliente VerificarCliente(string username, string contraseña)
-        {
-            MySqlConnection conexion = null;
-            try
-            {
-                conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
-                conexion.Open();
-                String consulta = "SELECT *  FROM Cliente WHERE Username = @Username AND password = Sha1(@Password)" + ";";
-                MySqlCommand comando = new MySqlCommand();
-                comando.Connection = conexion;
-                comando.CommandText = consulta;
-
-                comando.Parameters.AddWithValue("@Username", username);
-                comando.Parameters.AddWithValue("@Password", contraseña);
-                MySqlDataReader lector = comando.ExecuteReader();
-                Cliente obtenerdatosCliente;
-                if (lector.Read())
-                {
-                    obtenerdatosCliente = new Cliente();
-                    obtenerdatosCliente.IdCliente = lector.GetInt32("idCliente");
-                    obtenerdatosCliente.Nombre = lector.GetString("Nombre");
-                    //obtenerdatosCliente.Apellido = lector.GetString("Apellido");
-                    //obtenerdatosCliente.Username = lector.GetString("Username");
-                   
-
-                    return obtenerdatosCliente;
-                }
-                return null;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al autenticar");
-            }
-            finally
-            {
-                if (conexion != null)
-                    conexion.Close();
-            }
-        }
-
-
+     
+        /// <summary>
+        /// Se obtienen los datos del cliente ya registrado y un id para poder editarlos
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool editar(Cliente obj,int id)
         {
             try

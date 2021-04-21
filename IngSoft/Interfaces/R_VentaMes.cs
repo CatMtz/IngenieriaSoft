@@ -15,6 +15,7 @@ namespace IngSoft.Interfaces
         public R_VentaMes()
         {
             InitializeComponent();
+            CenterToScreen();
         }
     }
 }

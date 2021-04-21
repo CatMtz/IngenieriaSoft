@@ -18,7 +18,7 @@ namespace BackEnd.DAOS
                 List<Producto> lista = new List<Producto>();
                 ConexionMySQL con = new ConexionMySQL();
 
-                DataSet dat = con.LLenaComboGrid("SELECT * FROM Producto" + ";");
+                DataSet dat = con.LLenaComboGrid("SELECT * FROM Producto order by idProducto" + ";");
                 DataTable dt = dat.Tables[0];
                 Producto datos;
                 foreach (DataRow r in dt.Rows)
@@ -96,6 +96,35 @@ namespace BackEnd.DAOS
             catch (Exception ex)
             {
                 throw new Exception("No se pudo editar el Cliente");
+            }
+
+        }
+
+
+        public bool registrar(Producto obj)
+        {
+            try
+            {
+                MySqlConnection conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
+                conexion.Open();
+                String consulta = "INSERT INTO Producto "
+                    + "VALUES (default,@Nombre, @Precio, @Descripcion, @Categoria" + ";";
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexion;
+                comando.CommandText = consulta;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.Parameters.AddWithValue("@Nombre", obj.Nombre);
+                comando.Parameters.AddWithValue("@Precio", obj.Precio);
+                comando.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
+                comando.Parameters.AddWithValue("@Categoria", obj.Categoria);
+                int regafectados = comando.ExecuteNonQuery();
+                conexion.Close();
+                return (regafectados > 0);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo hacer el registro del Producto");
             }
 
         }
