@@ -8,24 +8,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackEnd.DAOS;
+using BackEnd.MODELOS;
+using IngSoft.Interfaces;
 
 namespace IngSoft.Interfaces
 {
     public partial class Principal : Form
     {
-        public Principal()
+        int idGerente = 0;
+        public Principal(int idger)
         {
-            InitializeComponent();
-            CenterToScreen();
+            if (idger > 0)
+            {
+                InitializeComponent();
+                CenterToScreen();
+                idGerente = idger;
+            }else
+            {
+                this.Dispose();
+              new Control_de_acceso().Visible = true;
+            }
         }
+     
 
         private void btnCerrarsesion_Click(object sender, EventArgs e)
         {
-
+            idGerente = 0;
+            this.Visible = false;
+          new Control_de_acceso().Visible=true;
+            this.Dispose();
+           
         }
 
         private void Principal_Load(object sender, EventArgs e)
         {
+            Admin datos = new DAOAdmin().Datos(idGerente);
+            lblGerente.Text = datos.Nombre + " " + datos.Apellidos;
 
             grvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvClientes.DataSource = null;
@@ -39,7 +57,9 @@ namespace IngSoft.Interfaces
         /// <param name="e"></param>
         private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string valorCelda = grvClientes.Rows[grvClientes.CurrentRow.Index].Cells[0].Value.ToString();
+            int valorCelda = int.Parse(grvClientes.Rows[grvClientes.CurrentRow.Index].Cells[0].Value.ToString());
+            new Pagos(valorCelda).Visible = true;
+            this.Visible = false;
         }
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -67,8 +87,8 @@ namespace IngSoft.Interfaces
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
              
-            //new EditarProducto().Show();
-            //this.Visible = false;
+            new EditarProducto().Show();
+            this.Visible = false;
         }
 
         private void ventaPorMesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,6 +109,11 @@ namespace IngSoft.Interfaces
             grvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvClientes.DataSource = null;
             grvClientes.DataSource = new DAOCliente().getAll();
+        }
+
+        private void btnNuevaV_Click(object sender, EventArgs e)
+        {
+            new NuevaVenta(idGerente).Show();
         }
     }
 }

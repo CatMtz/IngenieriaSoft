@@ -42,6 +42,8 @@
             this.deudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grvClientes = new System.Windows.Forms.DataGridView();
+            this.lblGerente = new System.Windows.Forms.Label();
+            this.btnNuevaV = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvClientes)).BeginInit();
             this.SuspendLayout();
@@ -111,21 +113,21 @@
             // editarToolStripMenuItem1
             // 
             this.editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.editarToolStripMenuItem1.Text = "Editar";
             this.editarToolStripMenuItem1.Click += new System.EventHandler(this.editarToolStripMenuItem1_Click);
             // 
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pagosToolStripMenuItem.Text = "Pagos";
             this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
             // 
@@ -167,12 +169,34 @@
             this.grvClientes.Size = new System.Drawing.Size(543, 246);
             this.grvClientes.TabIndex = 4;
             // 
+            // lblGerente
+            // 
+            this.lblGerente.AutoSize = true;
+            this.lblGerente.Location = new System.Drawing.Point(328, 13);
+            this.lblGerente.Name = "lblGerente";
+            this.lblGerente.Size = new System.Drawing.Size(13, 13);
+            this.lblGerente.TabIndex = 5;
+            this.lblGerente.Text = "  ";
+            // 
+            // btnNuevaV
+            // 
+            this.btnNuevaV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaV.Location = new System.Drawing.Point(12, 300);
+            this.btnNuevaV.Name = "btnNuevaV";
+            this.btnNuevaV.Size = new System.Drawing.Size(103, 31);
+            this.btnNuevaV.TabIndex = 6;
+            this.btnNuevaV.Text = "Nueva Venta";
+            this.btnNuevaV.UseVisualStyleBackColor = true;
+            this.btnNuevaV.Click += new System.EventHandler(this.btnNuevaV_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(666, 343);
+            this.Controls.Add(this.btnNuevaV);
+            this.Controls.Add(this.lblGerente);
             this.Controls.Add(this.grvClientes);
             this.Controls.Add(this.btnCerrarsesion);
             this.Controls.Add(this.menu);
@@ -204,5 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem deudasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosVendidosToolStripMenuItem;
         private System.Windows.Forms.DataGridView grvClientes;
+        private System.Windows.Forms.Label lblGerente;
+        private System.Windows.Forms.Button btnNuevaV;
     }
 }

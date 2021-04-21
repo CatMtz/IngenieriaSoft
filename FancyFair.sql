@@ -37,7 +37,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'Omar Martinez','4451223569','Prol. 5 de mayo #129'),(2,'jesica solorio','123456890','panindicuaro');
+INSERT INTO `cliente` VALUES (1,'Omar Martinez Gaytan','4451223569','Prol. 5 de mayo #129'),(2,'jesica solorio','123456890','panindicuaro');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +111,7 @@ CREATE TABLE `pagos` (
   PRIMARY KEY (`idPago`),
   KEY `fk_Pagos_venta1_idx` (`idCompra`),
   CONSTRAINT `fk_Pagos_venta1` FOREIGN KEY (`idCompra`) REFERENCES `venta` (`idCompra`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,8 +120,34 @@ CREATE TABLE `pagos` (
 
 LOCK TABLES `pagos` WRITE;
 /*!40000 ALTER TABLE `pagos` DISABLE KEYS */;
+INSERT INTO `pagos` VALUES (2,'2021-04-13 14:19:42',6,10.00),(3,'2021-04-13 14:19:42',7,15.00),(4,'2021-04-13 14:23:42',7,10.00);
 /*!40000 ALTER TABLE `pagos` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `abono` AFTER INSERT ON `pagos` FOR EACH ROW begin
+if venta.Cantidad_Venta>0 then
+	UPDATE venta
+	SET venta.Cantidad_Venta = venta.Cantidad_Venta - new.Cantidad 
+   where venta.idCompra=new.idCompra;
+elseif `ingsoft`.`venta`.Cantidad_Venta<=0 then
+	UPDATE `ingsoft`.`venta`
+	SET `Cantidad_Venta` = 0.0
+	WHERE `idCompra` = new.idCompra;
+end if;
+end */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `producto`
@@ -146,7 +172,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES (1,'MATE CANTIMPLORA M1',60.00,'500 ml','Termo'),(2,'PAW PATROL CANTIMPLORA M1',60.00,'500 ml','Termo'),(3,'RAYO MCQUEEN CANTIMPLORA M1',60.00,' 500 ml','Termo'),(4,'THOR',50.00,' 420 ML','Termo'),(5,'PAW PATROL CHUPON',35.00,'530 ml','Termo'),(6,'PAW PATROL ROJO',45.00,'490 ml','Termo'),(7,'VASO ENTRENADOR',25.00,'300 ml','Termo'),(8,'AVENGERS CANTIMPLORA M2',60.00,'500 ml','Termo'),(9,'I NEED SPACE',35.00,'473 ml','Termo'),(10,'JARRA MARVEL (HULK)',20.00,'1.0 litros','Termo'),(11,'PRINCESAS CANTIMPLORA M2',60.00,'500 ml','Termo'),(12,'WOODY  CANTIMPLORA M2',60.00,'500 ml','Termo'),(13,'BUZZ LIGHTYEAR CANTIMPLORA M1',60.00,' 500 ml','Termo'),(14,'BOTELLA MINNIE & MICKEY MOUSE',35.00,'850 ml','Termo'),(15,'PAW PATROL SNACK',85.00,'300 ml','Termo'),(16,'TAZA OSITO',100.00,' ','Termo'),(17,'BOTELLAS TOY STORY',60.00,'900 ml','Termo'),(18,'BOTELLA FROZEN',60.00,'750 ml','Termo'),(19,'PAW PATROL LLAVE',80.00,'550 ml','Termo'),(20,'FROZEN CANTINFLORA M1',60.00,'500 ml','Termo'),(21,'MISTER VASO',35.00,' ','Termo'),(22,'FROZEN CANTINFLORA M2',60.00,'500 ml','Termo'),(23,'TARRO MARVEL',35.00,' ','Termo'),(24,'BOTELLA TROLLS',60.00,'870 ml','Termo'),(25,'SPIDERMAN LLAVE',70.00,'500 ml','Termo'),(26,'BOTELLA AVENGERS',60.00,' 900 ml','Termo'),(27,'BOTELLA MICKEY',60.00,'900 ml','Termo'),(28,'AVENGERS LLAVE',80.00,'700 ml','Termo'),(29,'PRINCESAS CHUPON',35.00,'530 ml','Termo'),(30,'CARS CHUPON',35.00,'530 ml','Termo'),(31,'BOTELLA COLORES',35.00,'850 ml','Termo'),(32,'AVENGERS CHUPON',60.00,'530 ml','Termo'),(33,'BOTELLA DEPORTIVA',35.00,'750 ml ','Termo'),(34,'BOTELLA MINIONS',60.00,'850 ml','Termo'),(35,'BOTELLA MINIE MOUSE',70.00,'500 ml','Termo'),(36,'BOTELLA PRINCESAS ROSA',60.00,' 900 ml','Termo'),(37,'BOTELLA PRINCESAS TRANPARENTE',60.00,'900 ml','Termo'),(38,'BOTELLA REY LEON',80.00,'900 ml','Termo'),(39,'BOTELLA SPIDERMAN',35.00,'900 ml','Termo'),(40,'BOTELLA MINIONS',35.00,'900 ml','Termo'),(41,'BOTELLA FROZEN AZUL',80.00,'900 ml','Termo'),(42,'BOTELLA FROZEN TRANSPARENTE',35.00,'900 ml','Termo'),(43,'BOTELLA AVENGERS',35.00,'900 ml','Termo'),(44,'SHADOW',180.00,'BLANCO VINO','Tenis'),(45,'NIKE',180.00,'N-20','Tenis'),(46,'NIKE KYWIS',180.00,' ','Tenis'),(47,'PUMA ROMA ',180.00,'AMARILLO','Tenis'),(48,'AFI NIKE',180.00,'NEGRO TOTAL','Tenis'),(49,'TRECK 1010 ',180.00,'BLANCO PLATA','Tenis'),(50,'ADIDAS',180.00,'CONCHA FRANCIA','Tenis'),(51,'VANS 500',180.00,'OXFORD','Tenis'),(52,'PUMA',180.00,'TRANSFORT 8.5','Tenis'),(53,'N-020 7.5',180.00,' ','Tenis'),(54,'ADIDAS 006',180.00,'NEGRO BLANCO','Tenis'),(55,'NIKE 1070 6',180.00,'','Tenis'),(56,'NIKE',180.00,'NEGRO NEON','Tenis'),(57,'NIKE XP',180.00,' ','Tenis'),(58,'SOCK DART',180.00,' ','Tenis'),(59,'TENIS TRECK 501',180.00,' ','Tenis');
+INSERT INTO `producto` VALUES (1,'MATE CANTIMPLORA M1',60.00,'500 ml','Termo'),(2,'PAW PATROL CANTIMPLORA M1',60.00,'500 ml','Termo'),(3,'RAYO MCQUEEN CANTIMPLORA M1',60.00,' 500 ml','Termo'),(4,'THOR',50.00,' 420 ML','Termo'),(5,'PAW PATROL CHUPON',35.00,'530 ml','Termo'),(6,'PAW PATROL ROJO',45.00,'490 ml','Termo'),(7,'VASO ENTRENADOR',25.00,'300 ml','Termo'),(8,'AVENGERS CANTIMPLORA M2',60.00,'500 ml','Termo'),(9,'I NEED SPACE',35.00,'473 ml','Termo'),(10,'JARRA MARVEL (HULK)',20.00,'1.0 litros','Termo'),(11,'PRINCESAS CANTIMPLORA M2',60.00,'500 ml','Termo'),(12,'WOODY  CANTIMPLORA M2',60.00,'500 ml','Termo'),(13,'BUZZ LIGHTYEAR CANTIMPLORA M1',60.00,' 500 ml','Termo'),(14,'BOTELLA MINNIE & MICKEY MOUSE',35.00,'850 ml','Termo'),(15,'PAW PATROL SNACK',85.00,'300 ml','Termo'),(16,'TAZA OSITO',100.00,' ','Termo'),(17,'BOTELLAS TOY STORY',60.00,'900 ml','Termo'),(18,'BOTELLA FROZEN',60.00,'750 ml','Termo'),(19,'PAW PATROL LLAVE',80.00,'550 ml','Termo'),(20,'FROZEN CANTINFLORA M1',60.00,'500 ml','Termo'),(21,'MISTER VASO',35.00,' ','Termo'),(22,'FROZEN CANTINFLORA M2',60.00,'500 ml','Termo'),(23,'TARRO MARVEL',35.00,' ','Termo'),(24,'BOTELLA TROLLS',60.00,'870 ml','Termo'),(25,'SPIDERMAN LLAVE',70.00,'500 ml','Termo'),(26,'BOTELLA AVENGERS',60.00,' 900 ml','Termo'),(27,'BOTELLA MICKEY',60.00,'900 ml','Termo'),(28,'AVENGERS LLAVE',80.00,'700 ml','Termo'),(29,'PRINCESAS CHUPON',35.00,'530 ml','Termo'),(30,'CARS CHUPON',35.00,'530 ml','Termo'),(31,'BOTELLA COLORES',35.00,'850 ml','Termo'),(32,'AVENGERS CHUPON',60.00,'530 ml','Termo'),(33,'BOTELLA DEPORTIVA',35.00,'750 ml ','Termo'),(34,'BOTELLA MINIONS',60.00,'850 ml','Termo'),(35,'BOTELLA MINIE MOUSE',70.00,'500 ml','Termo'),(36,'BOTELLA PRINCESAS ROSA',60.00,' 900 ml','Termo'),(37,'BOTELLA PRINCESAS TRANPARENTE',60.00,'900 ml','Termo'),(38,'BOTELLA REY LEON',80.00,'900 ml','Termo'),(39,'BOTELLA SPIDERMAN',35.00,'900 ml','Termo'),(40,'BOTELLA MINIONS',35.00,'900 ml','Termo'),(41,'BOTELLA FROZEN AZUL',80.00,'900 ml','Termo'),(42,'BOTELLA FROZEN TRANSPARENTE',35.00,'900 ml','Termo'),(43,'BOTELLA AVENGERS',35.00,'900 ml','Termo'),(44,'SHADOW',180.00,'BLANCO VINO','Tenis'),(45,'NIKE',180.00,'N-20','Tenis'),(46,'NIKE KYWIS',180.00,' ','Tenis'),(47,'PUMA ROMA ',180.00,'AMARILLO','Tenis'),(48,'AFI NIKE',180.00,'NEGRO TOTAL','Tenis'),(49,'TRECK 1010 ',180.00,'BLANCO PLATA','Tenis'),(50,'ADIDAS',180.00,'CONCHA FRANCIA','Tenis'),(51,'VANS 500',180.00,'OXFORD','Tenis'),(52,'PUMA',180.00,'TRANSFORT 8.5','Tenis'),(53,'N-020 7.5',180.00,' ','Tenis'),(54,'ADIDAS 006',180.00,'NEGRO BLANCO','Tenis'),(55,'NIKE 1070 6',180.00,'','Tenis'),(56,'NIKE',180.00,'NEGRO NEON','Tenis'),(57,'NIKE XP',180.00,' ','Tenis'),(58,'SOCK DART',180.00,' Tenis color negro','Tenis'),(59,'TENIS TRECK 501',180.00,' ','Tenis');
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,4 +223,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-11 19:49:54
+-- Dump completed on 2021-04-14 16:39:40

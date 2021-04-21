@@ -16,6 +16,7 @@ namespace IngSoft.Interfaces
         public Productos()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void Productos_Load(object sender, EventArgs e)
