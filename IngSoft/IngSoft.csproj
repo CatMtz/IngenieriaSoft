@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Control_de_acceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Control_de_acceso.Designer.cs">
+      <DependentUpon>Control_de_acceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\EditCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="Interfaces\EditProducto.Designer.cs">
       <DependentUpon>EditProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Pagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Pagos.Designer.cs">
+      <DependentUpon>Pagos.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Principal.cs">
       <SubType>Form</SubType>
@@ -70,6 +82,12 @@
     <Compile Include="Interfaces\Productos.Designer.cs">
       <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ReporteDeDeudas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ReporteDeDeudas.Designer.cs">
+      <DependentUpon>ReporteDeDeudas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\R_VentaMes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,17 +96,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaces\Control_de_acceso.resx">
+      <DependentUpon>Control_de_acceso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\EditCliente.resx">
       <DependentUpon>EditCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\EditProducto.resx">
       <DependentUpon>EditProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Pagos.resx">
+      <DependentUpon>Pagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ReporteDeDeudas.resx">
+      <DependentUpon>ReporteDeDeudas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\R_VentaMes.resx">
       <DependentUpon>R_VentaMes.cs</DependentUpon>
