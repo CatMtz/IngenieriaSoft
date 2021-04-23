@@ -87,7 +87,7 @@ namespace IngSoft.Interfaces
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
              
-            new EditarProducto().Show();
+           // new EditarProducto().Show();
             this.Visible = false;
         }
 
@@ -113,7 +113,7 @@ namespace IngSoft.Interfaces
 
         private void btnNuevaV_Click(object sender, EventArgs e)
         {
-            new NuevaVenta(idGerente).Show();
+       //     new NuevaVenta(idGerente).Show();
         }
     }
 }
