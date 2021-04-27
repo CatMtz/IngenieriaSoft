@@ -1,5 +1,5 @@
 ﻿
-namespace IngSoft.Interfaces.Andrea
+namespace IngSoft.Interfaces
 {
     partial class Reporte_de_Productos_Vendidos
     {
