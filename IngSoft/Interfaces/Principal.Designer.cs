@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.btnCerrarsesion = new System.Windows.Forms.Button();
+            this.grvClientes = new System.Windows.Forms.DataGridView();
+            this.btnNuevaV = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,24 +44,57 @@
             this.ventaPorMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.grvClientes = new System.Windows.Forms.DataGridView();
             this.lblGerente = new System.Windows.Forms.Label();
-            this.btnNuevaV = new System.Windows.Forms.Button();
-            this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCerrarsesion
             // 
             this.btnCerrarsesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarsesion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarsesion.Location = new System.Drawing.Point(521, 12);
+            this.btnCerrarsesion.Location = new System.Drawing.Point(671, 344);
             this.btnCerrarsesion.Name = "btnCerrarsesion";
             this.btnCerrarsesion.Size = new System.Drawing.Size(111, 30);
             this.btnCerrarsesion.TabIndex = 2;
             this.btnCerrarsesion.Text = "Cerrar Sesión";
             this.btnCerrarsesion.UseVisualStyleBackColor = true;
             this.btnCerrarsesion.Click += new System.EventHandler(this.btnCerrarsesion_Click);
+            this.btnCerrarsesion.MouseLeave += new System.EventHandler(this.btnCerrarsesion_MouseLeave);
+            this.btnCerrarsesion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrarsesion_MouseMove);
+            // 
+            // grvClientes
+            // 
+            this.grvClientes.BackgroundColor = System.Drawing.Color.Silver;
+            this.grvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvClientes.Location = new System.Drawing.Point(12, 53);
+            this.grvClientes.Name = "grvClientes";
+            this.grvClientes.Size = new System.Drawing.Size(543, 246);
+            this.grvClientes.TabIndex = 4;
+            // 
+            // btnNuevaV
+            // 
+            this.btnNuevaV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaV.Location = new System.Drawing.Point(3, 343);
+            this.btnNuevaV.Name = "btnNuevaV";
+            this.btnNuevaV.Size = new System.Drawing.Size(103, 31);
+            this.btnNuevaV.TabIndex = 6;
+            this.btnNuevaV.Text = "Nueva Venta";
+            this.btnNuevaV.UseVisualStyleBackColor = true;
+            this.btnNuevaV.Click += new System.EventHandler(this.btnNuevaV_Click);
+            this.btnNuevaV.MouseLeave += new System.EventHandler(this.btnNuevaV_MouseLeave);
+            this.btnNuevaV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnNuevaV_MouseMove);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::IngSoft.Properties.Resources.LOGO;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(561, 97);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(221, 154);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // menu
             // 
@@ -68,7 +104,7 @@
             this.productosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.reportesToolStripMenuItem});
-            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Location = new System.Drawing.Point(12, 9);
             this.menu.Name = "menu";
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menu.Size = new System.Drawing.Size(248, 25);
@@ -113,21 +149,21 @@
             // editarToolStripMenuItem1
             // 
             this.editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.editarToolStripMenuItem1.Text = "Editar";
             this.editarToolStripMenuItem1.Click += new System.EventHandler(this.editarToolStripMenuItem1_Click);
             // 
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.pagosToolStripMenuItem.Text = "Pagos";
             this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
             // 
@@ -161,53 +197,39 @@
             this.productosVendidosToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.productosVendidosToolStripMenuItem.Text = "Productos vendidos";
             // 
-            // grvClientes
-            // 
-            this.grvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvClientes.Location = new System.Drawing.Point(63, 48);
-            this.grvClientes.Name = "grvClientes";
-            this.grvClientes.Size = new System.Drawing.Size(543, 246);
-            this.grvClientes.TabIndex = 4;
-            // 
             // lblGerente
             // 
             this.lblGerente.AutoSize = true;
-            this.lblGerente.Location = new System.Drawing.Point(328, 13);
+            this.lblGerente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGerente.ForeColor = System.Drawing.Color.White;
+            this.lblGerente.Location = new System.Drawing.Point(358, 17);
             this.lblGerente.Name = "lblGerente";
-            this.lblGerente.Size = new System.Drawing.Size(13, 13);
+            this.lblGerente.Size = new System.Drawing.Size(16, 17);
             this.lblGerente.TabIndex = 5;
             this.lblGerente.Text = "  ";
-            // 
-            // btnNuevaV
-            // 
-            this.btnNuevaV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaV.Location = new System.Drawing.Point(12, 300);
-            this.btnNuevaV.Name = "btnNuevaV";
-            this.btnNuevaV.Size = new System.Drawing.Size(103, 31);
-            this.btnNuevaV.TabIndex = 6;
-            this.btnNuevaV.Text = "Nueva Venta";
-            this.btnNuevaV.UseVisualStyleBackColor = true;
-            this.btnNuevaV.Click += new System.EventHandler(this.btnNuevaV_Click);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(666, 343);
-            this.Controls.Add(this.btnNuevaV);
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(794, 401);
             this.Controls.Add(this.lblGerente);
-            this.Controls.Add(this.grvClientes);
-            this.Controls.Add(this.btnCerrarsesion);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menu);
+            this.Controls.Add(this.btnCerrarsesion);
+            this.Controls.Add(this.btnNuevaV);
+            this.Controls.Add(this.grvClientes);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menu;
             this.Name = "Principal";
             this.Text = "Clientes";
             this.Activated += new System.EventHandler(this.Principal_Activated);
             this.Load += new System.EventHandler(this.Principal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,20 +237,21 @@
 
         #endregion
         private System.Windows.Forms.Button btnCerrarsesion;
+        private System.Windows.Forms.DataGridView grvClientes;
+        private System.Windows.Forms.Button btnNuevaV;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventaPorMesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deudasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosVendidosToolStripMenuItem;
-        private System.Windows.Forms.DataGridView grvClientes;
         private System.Windows.Forms.Label lblGerente;
-        private System.Windows.Forms.Button btnNuevaV;
     }
 }

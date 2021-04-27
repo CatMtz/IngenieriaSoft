@@ -32,6 +32,11 @@ namespace IngSoft.Interfaces
             grvPagos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvPagos.DataSource = null;
             grvPagos.DataSource = new DAOPago().getAll(idcliente);
+            grvPagos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            grvPagos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            grvPagos.ForeColor = Color.Black;
+            grvPagos.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            grvPagos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
             Cliente datos = new DAOCliente().getOne(idcliente);
             txtNombre.Text = datos.Nombre;
