@@ -51,5 +51,26 @@ namespace IngSoft.Interfaces
                 MessageBox.Show("Ocurrio un error");
             }
         }
+
+        private void btnEditar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnEditar.BackColor = Color.Yellow;
+        }
+
+        private void btnEditar_MouseLeave(object sender, EventArgs e)
+        {
+            btnEditar.BackColor = Color.Silver;
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e)
+        {
+            btnSalir.BackColor = Color.Silver;
+
+        }
+
+        private void btnSalir_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnSalir.BackColor = Color.Red;
+        }
     }
 }

@@ -129,5 +129,37 @@ namespace BackEnd.DAOS
 
         }
 
+        public bool RegistroDetalle(Detalleproducto obj)
+        {
+            try
+            {
+                MySqlConnection conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
+                conexion.Open();
+                String consulta = "INSERT INTO detalleproducto "
+                    + "VALUES (@Precio,@Cantidad, @IdCompra, @IdProducto" + ";";
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexion;
+                comando.CommandText = consulta;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.Parameters.AddWithValue("@Precio", obj.Precio);
+                comando.Parameters.AddWithValue("@Cantidad", obj.Cantidad);
+                comando.Parameters.AddWithValue("@IdCompra", obj.IdCompra);
+                comando.Parameters.AddWithValue("@IdProducto", obj.IdProducto);
+                int regafectados = comando.ExecuteNonQuery();
+                conexion.Close();
+                return (regafectados > 0);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo hacer el registro de los detalles");
+            }
+
+        }
+
+
+
     }
+
+  
 }

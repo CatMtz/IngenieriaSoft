@@ -29,6 +29,11 @@ namespace IngSoft.Interfaces
               new Control_de_acceso().Visible = true;
             }
         }
+        public Principal()
+        {
+            InitializeComponent();
+            CenterToScreen();
+        }
      
 
         private void btnCerrarsesion_Click(object sender, EventArgs e)
@@ -42,13 +47,19 @@ namespace IngSoft.Interfaces
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            Admin datos = new DAOAdmin().Datos(idGerente);
+            Admin datos = new DAOAdmin().Datos(1);
             lblGerente.Text = datos.Nombre + " " + datos.Apellidos;
+            
 
             grvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvClientes.DataSource = null;
             grvClientes.DataSource = new DAOCliente().getAll();
-           
+            grvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            grvClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            grvClientes.ForeColor = Color.Black;
+            grvClientes.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            grvClientes.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
         }
         /// <summary>
         /// Cliente
@@ -113,7 +124,30 @@ namespace IngSoft.Interfaces
 
         private void btnNuevaV_Click(object sender, EventArgs e)
         {
-       //     new NuevaVenta(idGerente).Show();
+           // new NuevaVenta(idGerente).Show();
+        }
+
+        private void btnCerrarsesion_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnCerrarsesion.BackColor = Color.Red;
+        }
+
+        private void btnCerrarsesion_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrarsesion.BackColor = Color.Silver;
+
+        }
+
+        private void btnNuevaV_MouseLeave(object sender, EventArgs e)
+        {
+            btnNuevaV.BackColor = Color.Silver;
+
+        }
+
+        private void btnNuevaV_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnNuevaV.BackColor = Color.Green;
+
         }
     }
 }

@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grvVenta = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.ButtonSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvVenta)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // grvVenta
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(442, 143);
-            this.dataGridView1.TabIndex = 12;
+            this.grvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvVenta.Location = new System.Drawing.Point(23, 120);
+            this.grvVenta.Name = "grvVenta";
+            this.grvVenta.Size = new System.Drawing.Size(442, 143);
+            this.grvVenta.TabIndex = 12;
             // 
             // label2
             // 
@@ -111,7 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(475, 336);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grvVenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ButtonSalir);
             this.Controls.Add(this.label1);
@@ -119,7 +119,8 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "R_VentaMes";
             this.Text = "R_VentaMes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.R_VentaMes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grvVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,7 +128,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grvVenta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ButtonSalir;
         private System.Windows.Forms.Label label1;

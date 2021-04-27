@@ -17,5 +17,14 @@ namespace IngSoft.Interfaces
             InitializeComponent();
             CenterToScreen();
         }
+
+        private void R_VentaMes_Load(object sender, EventArgs e)
+        {
+            grvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            grvVenta.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            grvVenta.ForeColor = Color.Black;
+            grvVenta.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            grvVenta.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+        }
     }
 }
