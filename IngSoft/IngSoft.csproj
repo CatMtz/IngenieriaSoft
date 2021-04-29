@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Añadir Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Añadir Producto.Designer.cs">
+      <DependentUpon>Añadir Producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Control_de_acceso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaces\Añadir Producto.resx">
+      <DependentUpon>Añadir Producto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Control_de_acceso.resx">
       <DependentUpon>Control_de_acceso.cs</DependentUpon>
     </EmbeddedResource>

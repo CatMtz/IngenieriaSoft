@@ -92,13 +92,12 @@
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = false;
-          
             // 
-            // frmLogin
+            // Control_de_acceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(244, 261);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtContrasenia);
@@ -106,7 +105,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIniciar);
-            this.Name = "frmLogin";
+            this.Name = "Control_de_acceso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONTROL DE ACCESO";
             this.ResumeLayout(false);
