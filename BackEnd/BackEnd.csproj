@@ -59,6 +59,7 @@
     <Compile Include="DAOS\DaoVenta.cs" />
     <Compile Include="MODELOS\Admin.cs" />
     <Compile Include="MODELOS\Cliente.cs" />
+    <Compile Include="MODELOS\Detalleproducto.cs" />
     <Compile Include="MODELOS\Pago.cs" />
     <Compile Include="MODELOS\Producto.cs" />
     <Compile Include="MODELOS\ReporteProductosVendidos.cs" />
