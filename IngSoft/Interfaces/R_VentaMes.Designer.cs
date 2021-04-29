@@ -33,7 +33,7 @@
             this.ButtonSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.grvVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,14 +42,14 @@
             this.grvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvVenta.Location = new System.Drawing.Point(23, 120);
             this.grvVenta.Name = "grvVenta";
-            this.grvVenta.Size = new System.Drawing.Size(442, 143);
+            this.grvVenta.Size = new System.Drawing.Size(503, 143);
             this.grvVenta.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(85, 15);
+            this.label2.Location = new System.Drawing.Point(144, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 17);
             this.label2.TabIndex = 11;
@@ -59,7 +59,7 @@
             // 
             this.ButtonSalir.BackColor = System.Drawing.Color.Red;
             this.ButtonSalir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSalir.Location = new System.Drawing.Point(357, 304);
+            this.ButtonSalir.Location = new System.Drawing.Point(418, 304);
             this.ButtonSalir.Name = "ButtonSalir";
             this.ButtonSalir.Size = new System.Drawing.Size(108, 26);
             this.ButtonSalir.TabIndex = 10;
@@ -84,39 +84,26 @@
             this.textBox1.Size = new System.Drawing.Size(125, 20);
             this.textBox1.TabIndex = 8;
             // 
-            // comboBox1
+            // dtpFecha
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(51, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
+            this.dtpFecha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha.Location = new System.Drawing.Point(12, 35);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(288, 25);
+            this.dtpFecha.TabIndex = 13;
             // 
             // R_VentaMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(475, 336);
+            this.ClientSize = new System.Drawing.Size(538, 336);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.grvVenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ButtonSalir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
             this.Name = "R_VentaMes";
             this.Text = "R_VentaMes";
             this.Load += new System.EventHandler(this.R_VentaMes_Load);
@@ -133,6 +120,6 @@
         private System.Windows.Forms.Button ButtonSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

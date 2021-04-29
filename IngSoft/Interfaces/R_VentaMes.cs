@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BackEnd.DAOS;
+using BackEnd.MODELOS;
 
 namespace IngSoft.Interfaces
 {
@@ -20,6 +22,13 @@ namespace IngSoft.Interfaces
 
         private void R_VentaMes_Load(object sender, EventArgs e)
         {
+
+            grvVenta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grvVenta.DataSource = null;
+            grvVenta.DataSource = new DAOReporte().getAllReporteVentaMes(dtpFecha.);
+
+
+
             grvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             grvVenta.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             grvVenta.ForeColor = Color.Black;
