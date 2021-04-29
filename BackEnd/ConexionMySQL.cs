@@ -71,6 +71,7 @@ namespace BackEnd
                 cnn.ConnectionString = GetConnectionString();
                 cnn.Open();
                 cmd.CommandText = mysql;
+              //  cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 da.SelectCommand = cmd;
                 da.SelectCommand.Connection = cnn;
                 da.Fill(ds);

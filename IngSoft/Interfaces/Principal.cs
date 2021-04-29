@@ -8,29 +8,58 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackEnd.DAOS;
+using BackEnd.MODELOS;
+using IngSoft.Interfaces;
 
 namespace IngSoft.Interfaces
 {
     public partial class Principal : Form
     {
+        int idGerente = 0;
+        public Principal(int idger)
+        {
+            if (idger > 0)
+            {
+                InitializeComponent();
+                CenterToScreen();
+                idGerente = idger;
+            }else
+            {
+                this.Dispose();
+              new Control_de_acceso().Visible = true;
+            }
+        }
         public Principal()
         {
             InitializeComponent();
             CenterToScreen();
         }
+     
 
         private void btnCerrarsesion_Click(object sender, EventArgs e)
         {
-
+            idGerente = 0;
+            this.Visible = false;
+          new Control_de_acceso().Visible=true;
+            this.Dispose();
+           
         }
 
         private void Principal_Load(object sender, EventArgs e)
         {
+            Admin datos = new DAOAdmin().Datos(1);
+            lblGerente.Text = datos.Nombre + " " + datos.Apellidos;
+            
 
             grvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvClientes.DataSource = null;
             grvClientes.DataSource = new DAOCliente().getAll();
-           
+            grvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            grvClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            grvClientes.ForeColor = Color.Black;
+            grvClientes.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            grvClientes.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
         }
         /// <summary>
         /// Cliente
@@ -39,7 +68,9 @@ namespace IngSoft.Interfaces
         /// <param name="e"></param>
         private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string valorCelda = grvClientes.Rows[grvClientes.CurrentRow.Index].Cells[0].Value.ToString();
+            int valorCelda = int.Parse(grvClientes.Rows[grvClientes.CurrentRow.Index].Cells[0].Value.ToString());
+            new Pagos(valorCelda).Visible = true;
+            this.Visible = false;
         }
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -67,8 +98,8 @@ namespace IngSoft.Interfaces
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
              
-            //new EditarProducto().Show();
-            //this.Visible = false;
+           // new EditarProducto().Show();
+            this.Visible = false;
         }
 
         private void ventaPorMesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,6 +120,34 @@ namespace IngSoft.Interfaces
             grvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvClientes.DataSource = null;
             grvClientes.DataSource = new DAOCliente().getAll();
+        }
+
+        private void btnNuevaV_Click(object sender, EventArgs e)
+        {
+           // new NuevaVenta(idGerente).Show();
+        }
+
+        private void btnCerrarsesion_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnCerrarsesion.BackColor = Color.Red;
+        }
+
+        private void btnCerrarsesion_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrarsesion.BackColor = Color.Silver;
+
+        }
+
+        private void btnNuevaV_MouseLeave(object sender, EventArgs e)
+        {
+            btnNuevaV.BackColor = Color.Silver;
+
+        }
+
+        private void btnNuevaV_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnNuevaV.BackColor = Color.Green;
+
         }
     }
 }

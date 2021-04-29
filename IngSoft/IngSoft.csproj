@@ -46,17 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\AñadirCliente.cs">
+    <Compile Include="Interfaces\Control_de_acceso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\AñadirCliente.Designer.cs">
-      <DependentUpon>AñadirCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\Control de acceso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Control de acceso.Designer.cs">
-      <DependentUpon>Control de acceso.cs</DependentUpon>
+    <Compile Include="Interfaces\Control_de_acceso.Designer.cs">
+      <DependentUpon>Control_de_acceso.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\EditCliente.cs">
       <SubType>Form</SubType>
@@ -69,12 +63,6 @@
     </Compile>
     <Compile Include="Interfaces\EditProducto.Designer.cs">
       <DependentUpon>EditProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\NuevaVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\NuevaVenta.Designer.cs">
-      <DependentUpon>NuevaVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Pagos.cs">
       <SubType>Form</SubType>
@@ -94,17 +82,11 @@
     <Compile Include="Interfaces\Productos.Designer.cs">
       <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\ReporteDeudas.cs">
+    <Compile Include="Interfaces\ReporteDeDeudas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\ReporteDeudas.Designer.cs">
-      <DependentUpon>ReporteDeudas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\ReporteProductosVendidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\ReporteProductosVendidos.Designer.cs">
-      <DependentUpon>ReporteProductosVendidos.cs</DependentUpon>
+    <Compile Include="Interfaces\ReporteDeDeudas.Designer.cs">
+      <DependentUpon>ReporteDeDeudas.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\R_VentaMes.cs">
       <SubType>Form</SubType>
@@ -114,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaces\Control_de_acceso.resx">
+      <DependentUpon>Control_de_acceso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\EditCliente.resx">
       <DependentUpon>EditCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +114,9 @@
     <EmbeddedResource Include="Interfaces\Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ReporteDeDeudas.resx">
+      <DependentUpon>ReporteDeDeudas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\R_VentaMes.resx">
       <DependentUpon>R_VentaMes.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +128,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -162,6 +151,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tipo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\Eliminar.ico" />
+    <Content Include="Imagenes\LOGO.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

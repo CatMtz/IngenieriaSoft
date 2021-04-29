@@ -54,8 +54,6 @@ namespace IngSoft.Interfaces.Andrea
                 MessageBox.Show("El número de telefono es incorrecto, debe contener 10 digitos");
                 return false;
             }
-
-
         }
     }
 }

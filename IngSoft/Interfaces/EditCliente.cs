@@ -24,10 +24,10 @@ namespace IngSoft.Interfaces
 
         private void EditCliente_Load(object sender, EventArgs e)
         {
-         List<Cliente> lista=   new DAOCliente().getOne(id);
-            txtNombre.Text = lista[0].Nombre;
-            txttelefono.Text = lista[0].Telefono;
-            txtDireccion.Text = lista[0].Direccion;
+            Cliente lista=   new DAOCliente().getOne(id);
+            txtNombre.Text = lista.Nombre;
+            txttelefono.Text = lista.Telefono;
+            txtDireccion.Text = lista.Direccion;
         }
 
         private void ButtonEditar_Click(object sender, EventArgs e)

@@ -1,0 +1,20 @@
+
+select v.Descripcion as Producto,p.idPago,v.idCompra,v.fecha,p.Cantidad Pago,
+(v.cantidad_venta - sum(p.Cantidad)) as Resta,concat(g.Nombre,' ',g.Apellidos) as Gerente
+from venta v join pagos p on v.idCompra=p.idCompra
+join gerente g on v.idGerente=g.IdGerente 
+join Cliente c on v.idCliente=c.idCliente where c.idcliente=1 group by p.idpago order by Resta desc;
+
+delimiter $$
+create trigger abono after insert on pagos for each row 
+begin
+if venta.saldo>0 then
+	UPDATE venta
+	SET venta.Saldo = venta.Saldo - new.Cantidad 
+   where venta.idCompra=new.idCompra;
+elseif `ingsoft`.`venta`.Cantidad_Venta<=0 then
+	UPDATE `ingsoft`.`venta`
+	SET `Cantidad_Venta` = 0.0
+	WHERE `idCompra` = new.idCompra;
+end if;
+end $$
