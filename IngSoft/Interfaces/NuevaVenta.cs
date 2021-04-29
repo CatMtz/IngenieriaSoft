@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using BackEnd.MODELOS;
 using BackEnd.DAOS;
 
-namespace IngSoft.Interfaces.Andrea
+namespace IngSoft.Interfaces
 {
     public partial class NuevaVenta : Form
     {
