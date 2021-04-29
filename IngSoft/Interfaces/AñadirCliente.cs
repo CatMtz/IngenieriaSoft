@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using BackEnd.DAOS;
 using BackEnd.MODELOS;
 
-namespace IngSoft.Interfaces.Andrea
+namespace IngSoft.Interfaces
 {
     public partial class AñadirCliente : Form
     {
