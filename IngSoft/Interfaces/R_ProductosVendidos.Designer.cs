@@ -1,5 +1,5 @@
 ﻿
-namespace IngSoft.Interfaces.Andrea
+namespace IngSoft.Interfaces
 {
     partial class Reporte_de_Productos_Vendidos
     {
@@ -32,7 +32,7 @@ namespace IngSoft.Interfaces.Andrea
             this.label1 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonsalir = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.grvReporte = new System.Windows.Forms.DataGridView();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -67,16 +67,18 @@ namespace IngSoft.Interfaces.Andrea
             this.label3.TabIndex = 5;
             this.label3.Text = "Total";
             // 
-            // buttonsalir
+            // btnSalir
             // 
-            this.buttonsalir.BackColor = System.Drawing.Color.Red;
-            this.buttonsalir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonsalir.Location = new System.Drawing.Point(427, 271);
-            this.buttonsalir.Name = "buttonsalir";
-            this.buttonsalir.Size = new System.Drawing.Size(92, 28);
-            this.buttonsalir.TabIndex = 7;
-            this.buttonsalir.Text = "Salir";
-            this.buttonsalir.UseVisualStyleBackColor = false;
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(427, 271);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(92, 28);
+            this.btnSalir.TabIndex = 7;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.MouseLeave += new System.EventHandler(this.buttonsalir_MouseLeave);
+            this.btnSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.buttonsalir_MouseMove);
             // 
             // grvReporte
             // 
@@ -108,11 +110,12 @@ namespace IngSoft.Interfaces.Andrea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(550, 317);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.btnVerificar);
             this.Controls.Add(this.grvReporte);
-            this.Controls.Add(this.buttonsalir);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label1);
@@ -134,7 +137,7 @@ namespace IngSoft.Interfaces.Andrea
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonsalir;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView grvReporte;
         private System.Windows.Forms.Button btnVerificar;
         private System.Windows.Forms.DateTimePicker dtpFecha;

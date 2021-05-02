@@ -35,6 +35,7 @@ namespace IngSoft.Interfaces
 
         private void NuevaVenta_Load(object sender, EventArgs e)
         {
+            cmbTipo.SelectedIndex = 0;
             try
             {
               
@@ -56,7 +57,7 @@ namespace IngSoft.Interfaces
               
                 foreach (Producto item in listaProductos)
                 {
-                    prod.Add(item.IdProducto +" "+item.Nombre) ;
+                    prod.Add(""+item.Nombre) ;
                     precios.Add(item.Precio);
                 }
                 cmbProducto.DataSource = prod;
@@ -88,10 +89,17 @@ namespace IngSoft.Interfaces
             try
             {
                 
-                Venta ven = new Venta(idgerent, cmbCliente.SelectedIndex, cmbProducto.Text,
-                    (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value), cmbTipo.Text, (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value));
+                Venta ven = new Venta(idgerent, cmbCliente.SelectedIndex+1, cmbProducto.Text,
+                                     (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value), cmbTipo.Text,
+                                     (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value));
+                Detalleproducto det = new Detalleproducto(Decimal.Parse(txtPrecio.Text),
+                                 int.Parse(nupCantidad.Value+""), 1000, listaProductos[cmbProducto.SelectedIndex].IdProducto);
+
+
+
                 if (new DaoVenta().registrar(ven))
                 {
+                    new DAOProducto().RegistroDetalle(det);
                     MessageBox.Show("Venta guardada con exito");
                 }else
                 {
@@ -103,6 +111,16 @@ namespace IngSoft.Interfaces
 
                 throw;
             }
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_MouseMove(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

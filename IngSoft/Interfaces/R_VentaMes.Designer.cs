@@ -33,8 +33,8 @@
             this.ButtonSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DTPFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.grvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +51,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(85, 15);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(124, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 17);
             this.label2.TabIndex = 11;
@@ -59,7 +60,7 @@
             // 
             // ButtonSalir
             // 
-            this.ButtonSalir.BackColor = System.Drawing.Color.Red;
+            this.ButtonSalir.BackColor = System.Drawing.Color.Transparent;
             this.ButtonSalir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonSalir.Location = new System.Drawing.Point(357, 318);
             this.ButtonSalir.Name = "ButtonSalir";
@@ -67,11 +68,15 @@
             this.ButtonSalir.TabIndex = 10;
             this.ButtonSalir.Text = "Salir";
             this.ButtonSalir.UseVisualStyleBackColor = false;
+            this.ButtonSalir.Click += new System.EventHandler(this.ButtonSalir_Click);
+            this.ButtonSalir.MouseLeave += new System.EventHandler(this.ButtonSalir_MouseLeave);
+            this.ButtonSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ButtonSalir_MouseMove);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(31, 304);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 17);
@@ -86,36 +91,24 @@
             this.textBox1.Size = new System.Drawing.Size(125, 20);
             this.textBox1.TabIndex = 8;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(51, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::IngSoft.Properties.Resources.LOGO;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(274, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(289, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(182, 105);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
+            // 
+            // DTPFecha
+            // 
+            this.DTPFecha.CalendarFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTPFecha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTPFecha.Location = new System.Drawing.Point(12, 62);
+            this.DTPFecha.Name = "DTPFecha";
+            this.DTPFecha.Size = new System.Drawing.Size(271, 25);
+            this.DTPFecha.TabIndex = 22;
             // 
             // R_VentaMes
             // 
@@ -123,13 +116,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(483, 371);
+            this.Controls.Add(this.DTPFecha);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grvVenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ButtonSalir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
             this.Name = "R_VentaMes";
             this.Text = "R_VentaMes";
             this.Load += new System.EventHandler(this.R_VentaMes_Load);
@@ -147,7 +140,7 @@
         private System.Windows.Forms.Button ButtonSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker DTPFecha;
     }
 }

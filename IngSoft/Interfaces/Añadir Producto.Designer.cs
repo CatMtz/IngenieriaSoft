@@ -37,7 +37,7 @@ namespace IngSoft.Interfaces
             // 
             this.pictureBox1.BackgroundImage = global::IngSoft.Properties.Resources.LOGO;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(491, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(371, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(186, 133);
             this.pictureBox1.TabIndex = 21;
@@ -48,7 +48,7 @@ namespace IngSoft.Interfaces
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(689, 399);
+            this.ClientSize = new System.Drawing.Size(572, 399);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Añadir_Producto";
             this.Text = "Añadir_Producto";

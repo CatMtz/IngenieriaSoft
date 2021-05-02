@@ -26,5 +26,21 @@ namespace IngSoft.Interfaces
             grvVenta.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
             grvVenta.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
+
+        private void ButtonSalir_MouseMove(object sender, MouseEventArgs e)
+        {
+            ButtonSalir.BackColor = Color.Red;
+        }
+
+        private void ButtonSalir_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonSalir.BackColor = Color.Transparent;
+
+        }
+
+        private void ButtonSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

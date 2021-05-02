@@ -54,5 +54,17 @@ namespace IngSoft.Interfaces
           
 
         }
+
+        private void buttonsalir_MouseLeave(object sender, EventArgs e)
+        {
+            btnSalir.BackColor = Color.Transparent;
+
+        }
+
+        private void buttonsalir_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnSalir.BackColor = Color.Red;
+
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace IngSoft.Interfaces.Andrea
+namespace IngSoft.Interfaces
 {
     partial class NuevaVenta
     {
@@ -88,7 +88,7 @@ namespace IngSoft.Interfaces.Andrea
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.Location = new System.Drawing.Point(279, 253);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
@@ -96,6 +96,8 @@ namespace IngSoft.Interfaces.Andrea
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
+            this.btnSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSalir_MouseMove);
             // 
             // nupCantidad
             // 
@@ -157,7 +159,7 @@ namespace IngSoft.Interfaces.Andrea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(366, 295);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.label3);
