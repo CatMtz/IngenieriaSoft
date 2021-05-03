@@ -31,7 +31,7 @@ namespace IngSoft.Interfaces
             }
             else
             {
-                MessageBox.Show("Usuario y/0 Contraseña Incorrecto");
+                MessageBox.Show("Usuario y/o Contraseña Incorrecto");
             }
         }
     }

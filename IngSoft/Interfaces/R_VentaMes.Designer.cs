@@ -1,4 +1,4 @@
-﻿namespace IngSoft.Interfaces
+namespace IngSoft.Interfaces
 {
     partial class R_VentaMes
     {
@@ -35,6 +35,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DTPFecha = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+
             ((System.ComponentModel.ISupportInitialize)(this.grvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,15 +48,17 @@
             this.grvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvVenta.Location = new System.Drawing.Point(23, 141);
             this.grvVenta.Name = "grvVenta";
-            this.grvVenta.Size = new System.Drawing.Size(442, 143);
+            this.grvVenta.Size = new System.Drawing.Size(503, 143);
             this.grvVenta.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(124, 31);
+            this.label2.Location = new System.Drawing.Point(144, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 17);
             this.label2.TabIndex = 11;
@@ -62,7 +68,11 @@
             // 
             this.ButtonSalir.BackColor = System.Drawing.Color.Transparent;
             this.ButtonSalir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            this.ButtonSalir.Location = new System.Drawing.Point(418, 304);
+
             this.ButtonSalir.Location = new System.Drawing.Point(357, 318);
+
             this.ButtonSalir.Name = "ButtonSalir";
             this.ButtonSalir.Size = new System.Drawing.Size(108, 26);
             this.ButtonSalir.TabIndex = 10;
@@ -91,6 +101,14 @@
             this.textBox1.Size = new System.Drawing.Size(125, 20);
             this.textBox1.TabIndex = 8;
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha.Location = new System.Drawing.Point(12, 35);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(288, 25);
+            this.dtpFecha.TabIndex = 13;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::IngSoft.Properties.Resources.LOGO;
@@ -114,10 +132,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(538, 336);
+            this.Controls.Add(this.dtpFecha);
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(483, 371);
             this.Controls.Add(this.DTPFecha);
             this.Controls.Add(this.pictureBox1);
+
             this.Controls.Add(this.grvVenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ButtonSalir);
@@ -140,6 +163,9 @@
         private System.Windows.Forms.Button ButtonSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker DTPFecha;
     }

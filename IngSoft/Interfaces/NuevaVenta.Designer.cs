@@ -1,4 +1,4 @@
-﻿
+
 namespace IngSoft.Interfaces
 {
     partial class NuevaVenta
