@@ -36,7 +36,9 @@ namespace IngSoft.Interfaces
             this.grvReporte = new System.Windows.Forms.DataGridView();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grvReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,7 +85,7 @@ namespace IngSoft.Interfaces
             // grvReporte
             // 
             this.grvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvReporte.Location = new System.Drawing.Point(12, 87);
+            this.grvReporte.Location = new System.Drawing.Point(12, 112);
             this.grvReporte.Name = "grvReporte";
             this.grvReporte.Size = new System.Drawing.Size(526, 150);
             this.grvReporte.TabIndex = 8;
@@ -91,7 +93,7 @@ namespace IngSoft.Interfaces
             // btnVerificar
             // 
             this.btnVerificar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerificar.Location = new System.Drawing.Point(275, 22);
+            this.btnVerificar.Location = new System.Drawing.Point(132, 53);
             this.btnVerificar.Name = "btnVerificar";
             this.btnVerificar.Size = new System.Drawing.Size(75, 23);
             this.btnVerificar.TabIndex = 10;
@@ -106,12 +108,23 @@ namespace IngSoft.Interfaces
             this.dtpFecha.Size = new System.Drawing.Size(200, 24);
             this.dtpFecha.TabIndex = 11;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::IngSoft.Properties.Resources.LOGO;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(323, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(182, 105);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // Reporte_de_Productos_Vendidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(550, 317);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.btnVerificar);
             this.Controls.Add(this.grvReporte);
@@ -126,7 +139,9 @@ namespace IngSoft.Interfaces
             this.MinimizeBox = false;
             this.Name = "Reporte_de_Productos_Vendidos";
             this.Text = "Reporte_de_Productos_Vendidos";
+            this.Load += new System.EventHandler(this.Reporte_de_Productos_Vendidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grvReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +156,6 @@ namespace IngSoft.Interfaces
         private System.Windows.Forms.DataGridView grvReporte;
         private System.Windows.Forms.Button btnVerificar;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

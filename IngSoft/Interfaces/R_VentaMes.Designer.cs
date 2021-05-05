@@ -32,13 +32,11 @@ namespace IngSoft.Interfaces
             this.label2 = new System.Windows.Forms.Label();
             this.ButtonSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DTPFecha = new System.Windows.Forms.DateTimePicker();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,9 +53,7 @@ namespace IngSoft.Interfaces
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(124, 31);
             this.label2.Location = new System.Drawing.Point(144, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 17);
@@ -68,11 +64,7 @@ namespace IngSoft.Interfaces
             // 
             this.ButtonSalir.BackColor = System.Drawing.Color.Transparent;
             this.ButtonSalir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.ButtonSalir.Location = new System.Drawing.Point(418, 304);
-
-            this.ButtonSalir.Location = new System.Drawing.Point(357, 318);
-
+            this.ButtonSalir.Location = new System.Drawing.Point(427, 318);
             this.ButtonSalir.Name = "ButtonSalir";
             this.ButtonSalir.Size = new System.Drawing.Size(108, 26);
             this.ButtonSalir.TabIndex = 10;
@@ -93,21 +85,14 @@ namespace IngSoft.Interfaces
             this.label1.TabIndex = 9;
             this.label1.Text = "Total de ventas";
             // 
-            // textBox1
+            // txtTotal
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(17, 324);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
-            this.textBox1.TabIndex = 8;
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha.Location = new System.Drawing.Point(12, 35);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(288, 25);
-            this.dtpFecha.TabIndex = 13;
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(17, 324);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(125, 20);
+            this.txtTotal.TabIndex = 8;
             // 
             // pictureBox1
             // 
@@ -128,24 +113,38 @@ namespace IngSoft.Interfaces
             this.DTPFecha.Size = new System.Drawing.Size(271, 25);
             this.DTPFecha.TabIndex = 22;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(104, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Verificar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // R_VentaMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(538, 336);
-            this.Controls.Add(this.dtpFecha);
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(483, 371);
+            this.ClientSize = new System.Drawing.Size(547, 371);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.DTPFecha);
             this.Controls.Add(this.pictureBox1);
-
             this.Controls.Add(this.grvVenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ButtonSalir);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTotal);
             this.Name = "R_VentaMes";
             this.Text = "R_VentaMes";
             this.Load += new System.EventHandler(this.R_VentaMes_Load);
@@ -162,11 +161,12 @@ namespace IngSoft.Interfaces
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ButtonSalir;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTotal;
 
-        private System.Windows.Forms.DateTimePicker dtpFecha;
+        
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker DTPFecha;
+        private System.Windows.Forms.Button button1;
     }
 }

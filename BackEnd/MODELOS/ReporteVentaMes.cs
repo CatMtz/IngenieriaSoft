@@ -10,7 +10,7 @@ namespace BackEnd.MODELOS
     {
         public int idCompra { get; set; }
         public String NombreProducto { get; set; }
-        public Int64 Cantidad { get; set; }
+        public Decimal Cantidad { get; set; }
         public Decimal TotalProducto { get; set; }
         public String Gerente { get; set; }
 

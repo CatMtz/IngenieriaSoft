@@ -66,5 +66,10 @@ namespace IngSoft.Interfaces
             btnSalir.BackColor = Color.Red;
 
         }
+
+        private void Reporte_de_Productos_Vendidos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

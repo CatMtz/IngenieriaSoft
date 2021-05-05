@@ -70,7 +70,7 @@ namespace IngSoft.Interfaces
         {
             int valorCelda = int.Parse(grvClientes.Rows[grvClientes.CurrentRow.Index].Cells[0].Value.ToString());
             new Pagos(valorCelda).Visible = true;
-            this.Visible = false;
+           
         }
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -92,34 +92,34 @@ namespace IngSoft.Interfaces
         /// <param name="e"></param>
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             
+            new Añadir_Producto().Show();
         }
 
-        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-             
-            new Productos().Show();
-            this.Visible = false;
-        }
+       
 
         private void ventaPorMesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new R_VentaMes().Show();
-            this.Visible = false;
 
         }
 
         private void editarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             new Productos().Show();
-            
+
         }
 
         private void Principal_Activated(object sender, EventArgs e)
         {
+
             grvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvClientes.DataSource = null;
             grvClientes.DataSource = new DAOCliente().getAll();
+            grvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            grvClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            grvClientes.ForeColor = Color.Black;
+            grvClientes.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            grvClientes.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
 
         private void btnNuevaV_Click(object sender, EventArgs e)
@@ -149,5 +149,17 @@ namespace IngSoft.Interfaces
             btnNuevaV.BackColor = Color.Green;
 
         }
+
+        private void productosVendidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Reporte_de_Productos_Vendidos().Show();
+        }
+
+        private void deudasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReporteDeDeudas().Show();
+        }
+
+       
     }
 }

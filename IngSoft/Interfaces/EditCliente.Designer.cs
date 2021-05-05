@@ -42,9 +42,9 @@
             // 
             // ButtonEditar
             // 
-            this.ButtonEditar.BackColor = System.Drawing.Color.DimGray;
+            this.ButtonEditar.BackColor = System.Drawing.Color.Transparent;
             this.ButtonEditar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonEditar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ButtonEditar.ForeColor = System.Drawing.Color.Black;
             this.ButtonEditar.Location = new System.Drawing.Point(67, 229);
             this.ButtonEditar.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.ButtonEditar.Name = "ButtonEditar";
@@ -56,7 +56,7 @@
             // 
             // buttonsalir
             // 
-            this.buttonsalir.BackColor = System.Drawing.Color.Red;
+            this.buttonsalir.BackColor = System.Drawing.Color.Transparent;
             this.buttonsalir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonsalir.Location = new System.Drawing.Point(348, 232);
             this.buttonsalir.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);

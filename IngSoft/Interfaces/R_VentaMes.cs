@@ -26,9 +26,6 @@ namespace IngSoft.Interfaces
             grvVenta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvVenta.DataSource = null;
             
-
-
-
             grvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             grvVenta.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             grvVenta.ForeColor = Color.Black;
@@ -50,6 +47,32 @@ namespace IngSoft.Interfaces
         private void ButtonSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Decimal total = 0;
+            int fec =int.Parse(DTPFecha.Value.Month.ToString());
+            List<ReporteVentaMes> list= new DAOReporte().getAllReporteVentaMes(fec);
+            if (list.Count > 0)
+            {
+                
+                grvVenta.DataSource = null;
+                grvVenta.DataSource = list;
+
+                foreach (ReporteVentaMes item in list)
+                {
+                    total += item.TotalProducto;
+                }
+                txtTotal.Text = "$" + total;
+
+
+            }
+            else
+            {
+                grvVenta.DataSource = null;
+            }
+           
         }
     }
 }
