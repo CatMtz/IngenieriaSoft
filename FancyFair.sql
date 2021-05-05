@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1    Database: ingsoft
 -- ------------------------------------------------------
 -- Server version	8.0.19
-
+ 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -120,7 +120,6 @@ CREATE TABLE `pagos` (
 
 LOCK TABLES `pagos` WRITE;
 /*!40000 ALTER TABLE `pagos` DISABLE KEYS */;
-INSERT INTO `pagos` VALUES (2,'2021-04-13 14:19:42',6,10.00),(3,'2021-04-13 14:19:42',7,15.00),(4,'2021-04-13 14:23:42',7,10.00);
 /*!40000 ALTER TABLE `pagos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -197,7 +196,7 @@ CREATE TABLE `venta` (
   KEY `Cliente_idx` (`IdCliente`),
   CONSTRAINT `Cliente` FOREIGN KEY (`IdCliente`) REFERENCES `cliente` (`IdCliente`),
   CONSTRAINT `Usuario` FOREIGN KEY (`IdGerente`) REFERENCES `gerente` (`IdGerente`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,13 +205,60 @@ CREATE TABLE `venta` (
 
 LOCK TABLES `venta` WRITE;
 /*!40000 ALTER TABLE `venta` DISABLE KEYS */;
-INSERT INTO `venta` VALUES (6,1,1,'PAW PATROL CANTIMPLORA M1',60.00,'Credito',60.00,'2021-04-06 17:17:30'),(7,1,2,'BOTELLA AVENGERS',35.00,'Credito',35.00,'2021-04-06 17:35:29');
 /*!40000 ALTER TABLE `venta` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Dumping routines for database 'ingsoft'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `R_ProdVend` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `R_ProdVend`(IN mes int)
+BEGIN
+select p.idproducto ID, p.nombre 'Nombre del producto',sum(dp.cantidad) Cantidad,
+sum(dp.cantidad*dp.Precio) TotalProducto,concat(g.Nombre,' ',g.apellidos) gerente
+from producto p join detalleproducto dp on p.idproducto=dp.idproducto
+join venta v on dp.idcompra=v.idcompra
+join gerente g on v.idgerente=g.idgerente 
+where Month(v.fecha)= mes order by p.Idproducto;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `R_Ventaprod` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `R_Ventaprod`(IN fecha datetime)
+BEGIN
+ select v.idcompra, v.descripcion,count(*) as Cantidad,sum(Cantidad_Venta) Total, v.fecha
+from  Venta v join cliente c on v.idcliente=c.idcliente 
+where  
+(day(v.fecha) between day(fecha) and day(now()) ) and (month(v.fecha) 
+between month(fecha) and Month(now()) )and (year(v.fecha)=year(fecha) )
+group by v.descripcion ;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -223,4 +269,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-14 16:39:40
+-- Dump completed on 2021-05-05 17:05:23
