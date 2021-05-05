@@ -5,6 +5,6 @@ Texto: arial 11 Color negro en cajas de texto y arial 11 color blanco en etiquet
 Tabindex: Secuencia de acuerdo al orden de los elementos de izquierda a derecha.
 Logo: En las interfaces donde se pueda acomodar, si no hay lugar no poner.
 Interfaces: Al abrir todas deben centrarse en la pantalla.
-Cajas de texto: Todas las cajas donde se muestre una cantidad en reportes y cajas de texto con informacion del cliente  deben ser solo de lectura a excepción de las cajas de texto de la interfaz "EditarCliente".
+Cajas de texto: Todas las cajas donde se muestre una cantidad en reportes y cajas de texto con informacion del cliente  deben ser solo de lectura a excepción de las cajas de texto de la interfaz "EditarCliente".  
 
 ***********************************
