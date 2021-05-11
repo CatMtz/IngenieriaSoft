@@ -38,7 +38,7 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.BackColor = System.Drawing.Color.Silver;
+            this.btnIniciar.BackColor = System.Drawing.Color.Transparent;
             this.btnIniciar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.Location = new System.Drawing.Point(12, 168);
             this.btnIniciar.Name = "btnIniciar";
@@ -64,9 +64,9 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(48, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 25);
+            this.label2.Size = new System.Drawing.Size(133, 25);
             this.label2.TabIndex = 0;
-            this.label2.Text = "CONTRASEÑA";
+            this.label2.Text = "CONTRASEÑA:";
             // 
             // txtUsuario
             // 

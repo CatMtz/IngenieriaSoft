@@ -24,7 +24,7 @@ namespace IngSoft.Interfaces
 
         private void EditCliente_Load(object sender, EventArgs e)
         {
-            Cliente lista=   new DAOCliente().getOne(id);
+            Cliente lista=  new DAOCliente().getOne(id);
             txtNombre.Text = lista.Nombre;
             txttelefono.Text = lista.Telefono;
             txtDireccion.Text = lista.Direccion;

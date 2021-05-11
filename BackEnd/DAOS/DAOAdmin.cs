@@ -23,9 +23,6 @@ namespace BackEnd.DAOS
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexion;
                 comando.CommandText = consulta;
-
-                comando.Parameters.AddWithValue("@Username", username);
-                comando.Parameters.AddWithValue("@Password", contraseña);
                 MySqlDataReader lector = comando.ExecuteReader();
                 Admin obtenerdatosCliente;
                 if (lector.Read())

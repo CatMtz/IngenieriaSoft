@@ -14,7 +14,7 @@ namespace IngSoft.Interfaces
 {
     public partial class NuevaVenta : Form
     {
-        int idgerent = 1;
+        int idgerent = 0;
         List<Producto> listaProductos = new DAOProducto().getAll();
         List<String> prod = new List<String>();
         List<Decimal> precios = new List<Decimal>();
@@ -27,12 +27,7 @@ namespace IngSoft.Interfaces
             idgerent = id;
             CenterToScreen();
         }
-        public NuevaVenta()
-        {
-            InitializeComponent();
-            CenterToScreen();
-        }
-
+     
         private void NuevaVenta_Load(object sender, EventArgs e)
         {
             cmbTipo.SelectedIndex = 0;
@@ -57,7 +52,7 @@ namespace IngSoft.Interfaces
               
                 foreach (Producto item in listaProductos)
                 {
-                    prod.Add(""+item.Nombre) ;
+                    prod.Add(item.Nombre) ;
                     precios.Add(item.Precio);
                 }
                 cmbProducto.DataSource = prod;
@@ -94,9 +89,7 @@ namespace IngSoft.Interfaces
                                      (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value));
                 Detalleproducto det = new Detalleproducto(Decimal.Parse(txtPrecio.Text),
                                  int.Parse(nupCantidad.Value+""), 1000, listaProductos[cmbProducto.SelectedIndex].IdProducto);
-
-
-
+                
                 if (new DaoVenta().registrar(ven))
                 {
                     new DAOProducto().RegistroDetalle(det);
@@ -115,11 +108,12 @@ namespace IngSoft.Interfaces
 
         private void btnSalir_MouseLeave(object sender, EventArgs e)
         {
-
+            btnSalir.BackColor = Color.Transparent;
         }
 
         private void btnSalir_MouseMove(object sender, MouseEventArgs e)
         {
+            btnSalir.BackColor = Color.Red;
 
         }
     }

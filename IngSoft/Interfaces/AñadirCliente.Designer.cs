@@ -107,7 +107,7 @@ namespace IngSoft.Interfaces
             // 
             // btnAñadir
             // 
-            this.btnAñadir.BackColor = System.Drawing.Color.DarkGray;
+            this.btnAñadir.BackColor = System.Drawing.Color.Transparent;
             this.btnAñadir.Location = new System.Drawing.Point(139, 241);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(75, 27);
@@ -118,7 +118,7 @@ namespace IngSoft.Interfaces
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.Location = new System.Drawing.Point(282, 274);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 26);
@@ -130,7 +130,7 @@ namespace IngSoft.Interfaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(369, 312);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAñadir);

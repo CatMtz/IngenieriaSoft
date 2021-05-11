@@ -59,12 +59,12 @@ namespace IngSoft.Interfaces
 
         private void btnEditar_MouseLeave(object sender, EventArgs e)
         {
-            btnEditar.BackColor = Color.Silver;
+            btnEditar.BackColor = Color.Transparent;
         }
 
         private void btnSalir_MouseLeave(object sender, EventArgs e)
         {
-            btnSalir.BackColor = Color.Silver;
+            btnSalir.BackColor = Color.Transparent;
 
         }
 

@@ -37,8 +37,11 @@ namespace IngSoft.Interfaces
                 }
                 else
                 {
-                    MessageBox.Show("Uno o varios espacios estan vacios, verifiquelos");
                 }
+            }else
+            {
+                MessageBox.Show("Uno o varios espacios estan vacios, verifiquelos");
+
             }
         }
 
