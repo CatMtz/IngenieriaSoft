@@ -34,5 +34,21 @@ namespace IngSoft.Interfaces
                 MessageBox.Show("Usuario y/o Contraseña Incorrecto");
             }
         }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e)
+        {
+            btnSalir.BackColor = Color.Transparent;
+        }
+
+        private void btnSalir_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnSalir.BackColor = Color.Red;
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

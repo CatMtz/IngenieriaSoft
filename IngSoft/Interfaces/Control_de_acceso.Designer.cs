@@ -38,7 +38,7 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.BackColor = System.Drawing.Color.Silver;
+            this.btnIniciar.BackColor = System.Drawing.Color.Transparent;
             this.btnIniciar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.Location = new System.Drawing.Point(12, 168);
             this.btnIniciar.Name = "btnIniciar";
@@ -64,27 +64,32 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(48, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 25);
+            this.label2.Size = new System.Drawing.Size(133, 25);
             this.label2.TabIndex = 0;
-            this.label2.Text = "CONTRASEÑA";
+            this.label2.Text = "CONTRASEÑA:";
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
             this.txtUsuario.Location = new System.Drawing.Point(12, 49);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(220, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(220, 25);
             this.txtUsuario.TabIndex = 1;
             // 
             // txtContrasenia
             // 
+            this.txtContrasenia.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenia.ForeColor = System.Drawing.Color.Black;
             this.txtContrasenia.Location = new System.Drawing.Point(12, 118);
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(220, 20);
+            this.txtContrasenia.PasswordChar = '*';
+            this.txtContrasenia.Size = new System.Drawing.Size(220, 25);
             this.txtContrasenia.TabIndex = 2;
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(158, 226);
             this.btnSalir.Name = "btnSalir";
@@ -92,13 +97,15 @@
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = false;
-          
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
+            this.btnSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSalir_MouseMove);
             // 
-            // frmLogin
+            // Control_de_acceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(244, 261);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtContrasenia);
@@ -106,7 +113,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIniciar);
-            this.Name = "frmLogin";
+            this.Name = "Control_de_acceso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONTROL DE ACCESO";
             this.ResumeLayout(false);

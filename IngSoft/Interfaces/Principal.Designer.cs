@@ -107,7 +107,7 @@
             this.menu.Location = new System.Drawing.Point(12, 9);
             this.menu.Name = "menu";
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menu.Size = new System.Drawing.Size(248, 25);
+            this.menu.Size = new System.Drawing.Size(340, 25);
             this.menu.TabIndex = 1;
             this.menu.Text = "Menu";
             // 
@@ -149,21 +149,21 @@
             // editarToolStripMenuItem1
             // 
             this.editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.editarToolStripMenuItem1.Text = "Editar";
             this.editarToolStripMenuItem1.Click += new System.EventHandler(this.editarToolStripMenuItem1_Click);
             // 
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pagosToolStripMenuItem.Text = "Pagos";
             this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
             // 
@@ -190,12 +190,14 @@
             this.deudasToolStripMenuItem.Name = "deudasToolStripMenuItem";
             this.deudasToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.deudasToolStripMenuItem.Text = "Deudas";
+            this.deudasToolStripMenuItem.Click += new System.EventHandler(this.deudasToolStripMenuItem_Click);
             // 
             // productosVendidosToolStripMenuItem
             // 
             this.productosVendidosToolStripMenuItem.Name = "productosVendidosToolStripMenuItem";
             this.productosVendidosToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.productosVendidosToolStripMenuItem.Text = "Productos vendidos";
+            this.productosVendidosToolStripMenuItem.Click += new System.EventHandler(this.productosVendidosToolStripMenuItem_Click);
             // 
             // lblGerente
             // 

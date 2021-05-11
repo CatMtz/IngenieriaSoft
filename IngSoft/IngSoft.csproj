@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Añadir Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Añadir Producto.Designer.cs">
+      <DependentUpon>Añadir Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AñadirCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AñadirCliente.Designer.cs">
+      <DependentUpon>AñadirCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Control_de_acceso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +75,12 @@
     </Compile>
     <Compile Include="Interfaces\EditProducto.Designer.cs">
       <DependentUpon>EditProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NuevaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NuevaVenta.Designer.cs">
+      <DependentUpon>NuevaVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Pagos.cs">
       <SubType>Form</SubType>
@@ -88,6 +106,12 @@
     <Compile Include="Interfaces\ReporteDeDeudas.Designer.cs">
       <DependentUpon>ReporteDeDeudas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\R_ProductosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\R_ProductosVendidos.Designer.cs">
+      <DependentUpon>R_ProductosVendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\R_VentaMes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +120,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaces\Añadir Producto.resx">
+      <DependentUpon>Añadir Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AñadirCliente.resx">
+      <DependentUpon>AñadirCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Control_de_acceso.resx">
       <DependentUpon>Control_de_acceso.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\EditProducto.resx">
       <DependentUpon>EditProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NuevaVenta.resx">
+      <DependentUpon>NuevaVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Pagos.resx">
       <DependentUpon>Pagos.cs</DependentUpon>
@@ -116,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\ReporteDeDeudas.resx">
       <DependentUpon>ReporteDeDeudas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\R_ProductosVendidos.resx">
+      <DependentUpon>R_ProductosVendidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\R_VentaMes.resx">
       <DependentUpon>R_VentaMes.cs</DependentUpon>

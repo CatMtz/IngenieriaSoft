@@ -14,7 +14,7 @@ namespace IngSoft.Interfaces
 {
     public partial class Pagos : Form
     {
-        int idcliente = 1;
+        int idcliente = 0;
         public Pagos()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace IngSoft.Interfaces
         {
             InitializeComponent();
             CenterToScreen();
-            idcliente = 1;
+            idcliente = idcl;
         }
        
 
@@ -52,6 +52,7 @@ namespace IngSoft.Interfaces
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+
         }
 
         private void btnAbonar_Click(object sender, EventArgs e)

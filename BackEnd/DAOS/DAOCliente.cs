@@ -22,8 +22,8 @@ namespace BackEnd.DAOS
                 List<Cliente> lista = new List<Cliente>();
                 ConexionMySQL con = new ConexionMySQL();
 
-                DataSet dat = con.LLenaComboGrid("SELECT c.*,v.Saldo as Deuda_Total "+
-                    " FROM Cliente c join venta v on c.idcliente=v.idcliente group by c.idcliente order by idCliente" + ";");
+                DataSet dat = con.LLenaComboGrid("SELECT c.*,sum(v.Saldo) as Deuda_Total "+
+                    " FROM Cliente c join venta v on c.idcliente=v.idcliente group by c.idcliente order by c.idCliente" + ";");
                 DataTable dt = dat.Tables[0];
                 Cliente datos;
                 foreach (DataRow r in dt.Rows)
@@ -87,7 +87,7 @@ namespace BackEnd.DAOS
                 MySqlConnection conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
                 conexion.Open();
                 String consulta = "INSERT INTO Cliente "
-                    + "VALUES (default,@Nombre, @Telefono, @Direccion" + ";";
+                    + "VALUES (default,@Nombre, @Telefono, @Direccion)" + ";";
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexion;
                 comando.CommandText = consulta;

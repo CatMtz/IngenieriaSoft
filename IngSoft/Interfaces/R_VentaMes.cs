@@ -25,15 +25,54 @@ namespace IngSoft.Interfaces
 
             grvVenta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvVenta.DataSource = null;
-            grvVenta.DataSource = new DAOReporte().getAllReporteVentaMes(dtpFecha.);
-
-
-
+            
             grvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             grvVenta.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             grvVenta.ForeColor = Color.Black;
             grvVenta.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
             grvVenta.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+        }
+
+        private void ButtonSalir_MouseMove(object sender, MouseEventArgs e)
+        {
+            ButtonSalir.BackColor = Color.Red;
+        }
+
+        private void ButtonSalir_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonSalir.BackColor = Color.Transparent;
+
+        }
+
+        private void ButtonSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Decimal total = 0;
+            int fec =int.Parse(DTPFecha.Value.Month.ToString());
+            List<ReporteVentaMes> list= new DAOReporte().getAllReporteVentaMes(fec);
+            if (list.Count > 0)
+            {
+                
+                grvVenta.DataSource = null;
+                grvVenta.DataSource = list;
+
+                foreach (ReporteVentaMes item in list)
+                {
+                    total += item.TotalProducto;
+                }
+                txtTotal.Text = "$" + total;
+
+
+            }
+            else
+            {
+                grvVenta.DataSource = null;
+            }
+           
         }
     }
 }

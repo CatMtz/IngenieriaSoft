@@ -14,6 +14,7 @@ namespace BackEnd.MODELOS
         public String Descripcion { get; set; }
         public String Categoria { get; set; }
 
+
         public Producto() { }
         public Producto(String nom, Decimal pre, String desc, String cat)
         {

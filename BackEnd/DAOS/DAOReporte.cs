@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BackEnd.MODELOS;
 using System.Data;
-
+using System.Windows.Forms;
 
 namespace BackEnd.DAOS
 {
@@ -80,28 +80,31 @@ namespace BackEnd.DAOS
 
         }
 
-        public List<ReporteVentaMes> getAllReporteVentaMes(String fecha)
+        public List<ReporteVentaMes> getAllReporteVentaMes(int mes)
         {
             try
             {
                 List<ReporteVentaMes> lista = new List<ReporteVentaMes>();
                 ConexionMySQL con = new ConexionMySQL();
 
-                DataSet dat = con.LLenaComboGrid("call R_Ventaprod('" + fecha + "')" + ";");
+                DataSet dat = con.LLenaComboGrid("call R_ProdVend('" + mes + "')" + ";");
                 DataTable dt = dat.Tables[0];
                 ReporteVentaMes datos;
+                
                 foreach (DataRow r in dt.Rows)
                 {
-                    datos = new ReporteVentaMes();
-                    datos.idCompra = (int)r.ItemArray[0];
-                    datos.NombreProducto = (String)r.ItemArray[1];
-                    datos.Cantidad = (Int64)r.ItemArray[2];
-                    datos.TotalProducto = (Decimal)r.ItemArray[3];
-                    datos.Gerente = (String)r.ItemArray[4];
+                    if (r.ItemArray[0] != null)
+                    {
+                        datos = new ReporteVentaMes();
+                        datos.idCompra = (int)r.ItemArray[0];
+                        datos.NombreProducto = (String)r.ItemArray[1];
+                        datos.Cantidad = (Decimal)r.ItemArray[2];
+                        datos.TotalProducto = (Decimal)r.ItemArray[3];
+                        datos.Gerente = (String)r.ItemArray[4];
 
-
-
-                    lista.Add(datos);
+                        lista.Add(datos);
+                    }
+                
                 }
                 return lista;
             }
@@ -119,17 +122,6 @@ namespace BackEnd.DAOS
 
 
 
-        /*
-         *select p.idproducto ID, p.nombre 'Nombre del producto',dp.cantidad,
-sum(dp.cantidad*dp.Precio) TotalProducto,concat(g.Nombre,' ',g.apellidos) gerente
-from producto p join detalleproducto dp on p.idproducto=dp.idproducto
-join venta v on dp.idcompra=v.idcompra
-join gerente g on v.idgerente=g.idgerente order by p.Idproducto;
-         * 
-         * 
-         * 
-         * 
-         */
     }
 
 }
