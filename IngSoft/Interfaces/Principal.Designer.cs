@@ -54,7 +54,7 @@
             // 
             this.btnCerrarsesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarsesion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarsesion.Location = new System.Drawing.Point(671, 344);
+            this.btnCerrarsesion.Location = new System.Drawing.Point(611, 359);
             this.btnCerrarsesion.Name = "btnCerrarsesion";
             this.btnCerrarsesion.Size = new System.Drawing.Size(111, 30);
             this.btnCerrarsesion.TabIndex = 2;
@@ -70,7 +70,7 @@
             this.grvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvClientes.Location = new System.Drawing.Point(12, 53);
             this.grvClientes.Name = "grvClientes";
-            this.grvClientes.Size = new System.Drawing.Size(543, 246);
+            this.grvClientes.Size = new System.Drawing.Size(450, 246);
             this.grvClientes.TabIndex = 4;
             // 
             // btnNuevaV
@@ -90,9 +90,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::IngSoft.Properties.Resources.LOGO;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(561, 97);
+            this.pictureBox1.Location = new System.Drawing.Point(468, 77);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 154);
+            this.pictureBox1.Size = new System.Drawing.Size(254, 179);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -107,7 +107,7 @@
             this.menu.Location = new System.Drawing.Point(12, 9);
             this.menu.Name = "menu";
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menu.Size = new System.Drawing.Size(340, 25);
+            this.menu.Size = new System.Drawing.Size(248, 25);
             this.menu.TabIndex = 1;
             this.menu.Text = "Menu";
             // 
@@ -124,14 +124,14 @@
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.editarToolStripMenuItem.Text = "Lista";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click_1);
             // 
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
@@ -149,21 +149,21 @@
             // editarToolStripMenuItem1
             // 
             this.editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.editarToolStripMenuItem1.Text = "Editar";
             this.editarToolStripMenuItem1.Click += new System.EventHandler(this.editarToolStripMenuItem1_Click);
             // 
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.pagosToolStripMenuItem.Text = "Pagos";
             this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
             // 
@@ -204,7 +204,7 @@
             this.lblGerente.AutoSize = true;
             this.lblGerente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGerente.ForeColor = System.Drawing.Color.White;
-            this.lblGerente.Location = new System.Drawing.Point(358, 17);
+            this.lblGerente.Location = new System.Drawing.Point(267, 350);
             this.lblGerente.Name = "lblGerente";
             this.lblGerente.Size = new System.Drawing.Size(16, 17);
             this.lblGerente.TabIndex = 5;
@@ -215,7 +215,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(794, 401);
+            this.ClientSize = new System.Drawing.Size(733, 401);
             this.Controls.Add(this.lblGerente);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menu);

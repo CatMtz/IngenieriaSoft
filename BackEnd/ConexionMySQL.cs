@@ -78,7 +78,7 @@ namespace BackEnd
             }
             catch (Exception e)
             {
-
+                throw e;
             }
             finally
             {

@@ -25,7 +25,7 @@ namespace IngSoft.Interfaces
 
             grvVenta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvVenta.DataSource = null;
-            
+
             grvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             grvVenta.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             grvVenta.ForeColor = Color.Black;
@@ -46,7 +46,7 @@ namespace IngSoft.Interfaces
 
         private void ButtonSalir_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,6 +71,7 @@ namespace IngSoft.Interfaces
             else
             {
                 grvVenta.DataSource = null;
+                txtTotal.Text = "No hay ventas registradas";
             }
            
         }

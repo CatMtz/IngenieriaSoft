@@ -31,13 +31,19 @@ namespace IngSoft.Interfaces
         {
             grvPagos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvPagos.DataSource = null;
-            grvPagos.DataSource = new DAOPago().getAll(idcliente);
-            grvPagos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            grvPagos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            grvPagos.ForeColor = Color.Black;
-            grvPagos.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
-            grvPagos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            if (new DAOPago().getAll(idcliente).Count > 0)
+            {
+                grvPagos.DataSource = new DAOPago().getAll(idcliente);
+                grvPagos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                grvPagos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                grvPagos.ForeColor = Color.Black;
+                grvPagos.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+                grvPagos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                grvPagos.Columns[9].Visible = false;
+            }else
+            {
 
+            }
             Cliente datos = new DAOCliente().getOne(idcliente);
             txtNombre.Text = datos.Nombre;
             txtDireccion.Text = datos.Direccion;

@@ -33,6 +33,11 @@ namespace IngSoft.Interfaces
                 {
                     grvReporte.DataSource = null;
                     grvReporte.DataSource = lista;
+                    grvReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    grvReporte.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    grvReporte.ForeColor = Color.Black;
+                    grvReporte.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+                    grvReporte.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                     foreach (ReporteProductosVendidos item in lista)
                     {
                         total += item.Total;
@@ -70,6 +75,11 @@ namespace IngSoft.Interfaces
         private void Reporte_de_Productos_Vendidos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

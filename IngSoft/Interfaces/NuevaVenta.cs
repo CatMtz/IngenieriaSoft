@@ -18,7 +18,7 @@ namespace IngSoft.Interfaces
         List<Producto> listaProductos = new DAOProducto().getAll();
         List<String> prod = new List<String>();
         List<Decimal> precios = new List<Decimal>();
-        List<Cliente> listaClientes = new DAOCliente().getAll();
+        List<Cliente> listaClientes = new DAOCliente().getAllClientes();
         List<String> cli = new List<String>();
 
         public NuevaVenta(int id)
@@ -85,7 +85,7 @@ namespace IngSoft.Interfaces
             {
                 
                 Venta ven = new Venta(idgerent, cmbCliente.SelectedIndex+1, cmbProducto.Text,
-                                     (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value), cmbTipo.Text,
+                                     (Decimal.Parse(txtPrecio.Text)), cmbTipo.Text,
                                      (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value));
                 Detalleproducto det = new Detalleproducto(Decimal.Parse(txtPrecio.Text),
                                  int.Parse(nupCantidad.Value+""), 1000, listaProductos[cmbProducto.SelectedIndex].IdProducto);

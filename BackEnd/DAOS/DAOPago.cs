@@ -19,24 +19,26 @@ namespace BackEnd.DAOS
                 List<Pago> lista = new List<Pago>();
                 ConexionMySQL con = new ConexionMySQL();
 
-                DataSet dat = con.LLenaComboGrid("select v.Descripcion as Producto, p.idPago, v.idCompra, v.fecha, p.Cantidad"+
-                  ",(v.cantidad_venta - sum(p.Cantidad)) as Resta, concat(g.Nombre, ' ', g.Apellidos) as Gerente"+
-                  " from venta v join pagos p on v.idCompra = p.idCompra"+
-                  " join gerente g on v.idGerente = g.IdGerente"+
-                  " join Cliente c on v.idCliente = c.idCliente where c.idcliente ="+ id +
-                  " group by p.idpago order by Resta desc; " + ";");
+                DataSet dat = con.LLenaComboGrid("select v.idCompra,v.descripcion,v.Cantidad_Venta,dp.cantidad,(dp.cantidad*dp.Precio) Total," +
+                  " sum(p.Cantidad) Total_pagos,v.saldo,v.fecha,concat(g.Nombre,' ',g.Apellidos) as Gerente" +
+                  " from venta v join detalleproducto dp on v.idcompra=dp.idcompra" +
+                  " join pagos p on v.idCompra=p.idCompra"+
+                  " join gerente g on v.idGerente=g.IdGerente" +
+                  " join Cliente c on v.idCliente=c.idCliente where c.idcliente='" + id + "' group by v.descripcion;");
                 DataTable dt = dat.Tables[0];
                 Pago datos;
                 foreach (DataRow r in dt.Rows)
                 {
                     datos = new Pago();
-                    datos.Producto = (String)r.ItemArray[0];
-                    datos.idPago = (int)r.ItemArray[1];
-                    datos.idCompra = (int)r.ItemArray[2];
-                    datos.Fecha = (DateTime)r.ItemArray[3];
-                    datos.Cantidad = (Decimal)r.ItemArray[4];
-                    datos.Resta = (Decimal)r.ItemArray[5];
-                    datos.Gerente = (String)r.ItemArray[6];
+                    datos.idCompra = (int)r.ItemArray[0];
+                    datos.Producto = (String)r.ItemArray[1];
+                    datos.Cantidad_Venta = (Decimal)r.ItemArray[2];
+                    datos.Cantidadproductos = (int)r.ItemArray[3];
+                    datos.Total = (Decimal)r.ItemArray[4];
+                    datos.Total_pagos = (Decimal)r.ItemArray[5];
+                    datos.Saldo = (Decimal)r.ItemArray[6];
+                    datos.Fecha = (DateTime)r.ItemArray[7];
+                    datos.Gerente = (String)r.ItemArray[8];
 
 
                     lista.Add(datos);
@@ -64,7 +66,7 @@ namespace BackEnd.DAOS
                 comando.CommandText = consulta;
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.Parameters.AddWithValue("@idCompra", obj.idCompra);
-                comando.Parameters.AddWithValue("@Cantidad", obj.Cantidad);
+                comando.Parameters.AddWithValue("@Cantidad", obj.CantidadPago);
                 int regafectados = comando.ExecuteNonQuery();
                 conexion.Close();
                 return (regafectados > 0);

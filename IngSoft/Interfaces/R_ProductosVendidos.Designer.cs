@@ -45,7 +45,8 @@ namespace IngSoft.Interfaces
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 25);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(123, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 0;
@@ -53,7 +54,7 @@ namespace IngSoft.Interfaces
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(83, 268);
+            this.txtTotal.Location = new System.Drawing.Point(69, 379);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(124, 24);
@@ -63,7 +64,8 @@ namespace IngSoft.Interfaces
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 271);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 382);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 17);
             this.label3.TabIndex = 5;
@@ -73,27 +75,28 @@ namespace IngSoft.Interfaces
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(427, 271);
+            this.btnSalir.Location = new System.Drawing.Point(483, 375);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(92, 28);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             this.btnSalir.MouseLeave += new System.EventHandler(this.buttonsalir_MouseLeave);
             this.btnSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.buttonsalir_MouseMove);
             // 
             // grvReporte
             // 
             this.grvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvReporte.Location = new System.Drawing.Point(12, 112);
+            this.grvReporte.Location = new System.Drawing.Point(12, 159);
             this.grvReporte.Name = "grvReporte";
-            this.grvReporte.Size = new System.Drawing.Size(526, 150);
+            this.grvReporte.Size = new System.Drawing.Size(563, 203);
             this.grvReporte.TabIndex = 8;
             // 
             // btnVerificar
             // 
             this.btnVerificar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerificar.Location = new System.Drawing.Point(132, 53);
+            this.btnVerificar.Location = new System.Drawing.Point(108, 106);
             this.btnVerificar.Name = "btnVerificar";
             this.btnVerificar.Size = new System.Drawing.Size(75, 23);
             this.btnVerificar.TabIndex = 10;
@@ -103,18 +106,18 @@ namespace IngSoft.Interfaces
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(69, 23);
+            this.dtpFecha.Location = new System.Drawing.Point(12, 58);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 24);
+            this.dtpFecha.Size = new System.Drawing.Size(276, 24);
             this.dtpFecha.TabIndex = 11;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::IngSoft.Properties.Resources.LOGO;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(323, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(335, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 105);
+            this.pictureBox1.Size = new System.Drawing.Size(240, 127);
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
@@ -123,7 +126,7 @@ namespace IngSoft.Interfaces
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(550, 317);
+            this.ClientSize = new System.Drawing.Size(598, 415);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.btnVerificar);

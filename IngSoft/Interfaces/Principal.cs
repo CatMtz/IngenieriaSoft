@@ -53,7 +53,7 @@ namespace IngSoft.Interfaces
 
             grvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvClientes.DataSource = null;
-            grvClientes.DataSource = new DAOCliente().getAll();
+            grvClientes.DataSource = new DAOCliente().getAllVentas();
             grvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             grvClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             grvClientes.ForeColor = Color.Black;
@@ -75,8 +75,8 @@ namespace IngSoft.Interfaces
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
 
+            new AñadirCliente().Show();
         }
 
         private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace IngSoft.Interfaces
 
             grvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvClientes.DataSource = null;
-            grvClientes.DataSource = new DAOCliente().getAll();
+            grvClientes.DataSource = new DAOCliente().getAllVentas();
             grvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             grvClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             grvClientes.ForeColor = Color.Black;
@@ -160,6 +160,6 @@ namespace IngSoft.Interfaces
             new ReporteDeDeudas().Show();
         }
 
-       
+     
     }
 }
