@@ -73,58 +73,47 @@ namespace IngSoft.Interfaces
                 int valorCelda = int.Parse(grvProductos.Rows[grvProductos.CurrentRow.Index].Cells[0].Value.ToString());
                 new EditProducto(valorCelda).Show();
 
+                actualizar();
+                
+
             }
             if (e.ColumnIndex == 6)
             {
-
-                MessageBox.Show("Eliminar");
+                int valorCelda = int.Parse(grvProductos.Rows[grvProductos.CurrentRow.Index].Cells[0].Value.ToString());
+                if(new DAOProducto().Eliminar(valorCelda))
+                {
+                    MessageBox.Show("Se elimino con exito el producto");
+                    actualizar();
+                }
 
             }
         }
+       public void actualizar()
+        {
+            grvProductos.Columns.Remove("ColEliminar");
+            grvProductos.Columns.Remove("ColEditar");
+            grvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grvProductos.DataSource = null;
+            grvProductos.DataSource = new DAOProducto().getAll();
+            grvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            grvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            grvProductos.ForeColor = Color.Black;
+            grvProductos.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            grvProductos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+            grvProductos.Columns.Add(btn);
+            btn.Text = "Editar";
+            btn.Name = "ColEditar";
 
-        //private void grvProductos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (e.ColumnIndex >= 0 && this.grvProductos.Columns[e.ColumnIndex].Name == "ColEditar" && e.RowIndex >= 0)
-        //        {
-        //            e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+            grvProductos.Columns.Add(btn1);
+            btn1.Text = "Eliminar";
+            btn1.Name = "ColEliminar";
 
-        //            DataGridViewButtonCell celBotonedit = this.grvProductos.Rows[e.RowIndex].Cells["ColEditar"] as DataGridViewButtonCell;
-        //            Icon editar = new Icon(@"iconos\\Eliminar.ico");
-        //            e.Graphics.DrawIcon(editar, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+            btn.UseColumnTextForButtonValue = true;
+            btn1.UseColumnTextForButtonValue = true;
 
-
-        //            this.grvProductos.Rows[e.RowIndex].Height = editar.Height+5;
-        //            this.grvProductos.Columns[e.ColumnIndex].Width = editar.Width +5;
-        //            e.Handled = true;
-
-        //        }
-        //        if (e.ColumnIndex >= 0 && this.grvProductos.Columns[e.ColumnIndex].Name == "ColEliminar" && e.RowIndex >= 0)
-        //        {
-        //            e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-
-
-        //            DataGridViewButtonCell celBotoneli = this.grvProductos.Rows[e.RowIndex].Cells["ColEliminar"] as DataGridViewButtonCell;
-        //            Icon eliminar = new Icon(@"iconos\\Eliminar.ico");
-        //            e.Graphics.DrawIcon(eliminar, e.CellBounds.Left + 5, e.CellBounds.Top + 5);
-
-
-
-        //            this.grvProductos.Rows[e.RowIndex].Height = eliminar.Height + 5;
-        //            this.grvProductos.Columns[e.ColumnIndex].Width = eliminar.Width + 5;
-
-        //            e.Handled = true;
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        throw;
-        //    }
-
-        //}
+        }
     }
+       
 }

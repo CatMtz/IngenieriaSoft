@@ -17,7 +17,7 @@ namespace IngSoft
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Reporte_de_Productos_Vendidos());
+            Application.Run(new Control_de_acceso());
         }
     }
 }

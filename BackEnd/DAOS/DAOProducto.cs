@@ -108,7 +108,7 @@ namespace BackEnd.DAOS
                 MySqlConnection conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
                 conexion.Open();
                 String consulta = "INSERT INTO Producto "
-                    + "VALUES (default,@Nombre, @Precio, @Descripcion, @Categoria" + ";";
+                    + "VALUES (default,@Nombre, @Precio, @Descripcion, @Categoria)" + ";";
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexion;
                 comando.CommandText = consulta;
@@ -156,6 +156,29 @@ namespace BackEnd.DAOS
 
         }
 
+
+
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                MySqlConnection conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
+                conexion.Open();
+                String consulta = "Delete from producto where idproducto='" + id + "';";
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexion;
+                comando.CommandText = consulta;
+                int regafectados = comando.ExecuteNonQuery();
+                conexion.Close();
+                return (regafectados > 0);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        
+        }
 
 
     }

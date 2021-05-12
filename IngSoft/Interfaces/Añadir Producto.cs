@@ -84,11 +84,11 @@ namespace IngSoft.Interfaces
         }
 
 
-        public bool verificar(String tel)
+        public bool verificar(String precio)
         {
 
-            Regex rex = new Regex("[0-9]+");
-            if (rex.IsMatch(tel))
+            Regex rex = new Regex("[0-9]*");
+            if (rex.IsMatch(precio))
             {
                 return true;
             }

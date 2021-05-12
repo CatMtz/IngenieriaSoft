@@ -39,13 +39,15 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(682, 257);
+            this.btnSalir.Location = new System.Drawing.Point(602, 255);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 27);
             this.btnSalir.TabIndex = 0;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.button1_Click);
+            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
+            this.btnSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSalir_MouseMove);
             // 
             // lbltotal
             // 
@@ -70,7 +72,7 @@
             this.grvdeudas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvdeudas.Location = new System.Drawing.Point(12, 12);
             this.grvdeudas.Name = "grvdeudas";
-            this.grvdeudas.Size = new System.Drawing.Size(745, 206);
+            this.grvdeudas.Size = new System.Drawing.Size(665, 206);
             this.grvdeudas.TabIndex = 3;
             // 
             // ReporteDeDeudas
@@ -78,7 +80,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(768, 291);
+            this.ClientSize = new System.Drawing.Size(683, 291);
             this.Controls.Add(this.grvdeudas);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbltotal);

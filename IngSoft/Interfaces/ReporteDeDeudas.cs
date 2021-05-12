@@ -26,9 +26,14 @@ namespace IngSoft.Interfaces
             List<ReporteDeudas> lista = new DAOReporte().getAllReporteDeudas();
             grvdeudas.DataSource = null;
             grvdeudas.DataSource = lista;
+            grvdeudas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            grvdeudas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            grvdeudas.ForeColor = Color.Black;
+            grvdeudas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            grvdeudas.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
 
-        foreach(ReporteDeudas item in lista)
+            foreach (ReporteDeudas item in lista)
             {
                 total += item.Saldo;
             }
@@ -40,7 +45,18 @@ namespace IngSoft.Interfaces
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e)
+        {
+            btnSalir.BackColor = Color.Transparent;
+        }
+
+        private void btnSalir_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnSalir.BackColor = Color.Red;
+
         }
     }
 }

@@ -11,31 +11,38 @@ namespace BackEnd.MODELOS
 {
     public class Pago
     {
-
-        public String  Producto { get; set; }
-        public int idPago { get; set; }
+       
         public int idCompra { get; set; }
+
+        public String Producto { get; set; }
+        public Decimal Cantidad_Venta { get; set; }
+        public int Cantidadproductos { get; set; }
+        public Decimal Total { get; set; }
+        public Decimal Total_pagos { get; set; }
+        public Decimal Saldo { get; set; }
         public DateTime Fecha { get; set; }
-        public Decimal Cantidad { get; set; }
-        public Decimal Resta { get; set; }
+      
         public String Gerente { get; set; }
+        public Decimal CantidadPago { get; set; }
 
         public Pago() { }
 
-        public Pago(String prod, int idpag, int idcom, DateTime fec, Decimal cant, Decimal res, String geren)
+        public Pago(int idcom,String prod, Decimal cantV,
+            int cant,Decimal tot,Decimal res,DateTime fec, String geren)
         {
-            this.Producto = prod;
-            this.idPago = idpag;
             this.idCompra = idcom;
+            this.Producto = prod;
+            this.Cantidad_Venta = cantV;
+            this.Cantidadproductos = cant;
+            this.Total = tot;
+            this.Saldo = res;
             this.Fecha = fec;
-            this.Cantidad = cant;
-            this.Resta = res;
             this.Gerente = geren;
         }
         public Pago(int idcom, Decimal cant)
         {
             this.idCompra = idcom;
-            this.Cantidad = cant;
+            this.CantidadPago = cant;
         }
 
 

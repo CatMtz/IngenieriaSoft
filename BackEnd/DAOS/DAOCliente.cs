@@ -15,7 +15,7 @@ namespace BackEnd.DAOS
         /// Obtencion de todos los clientes registrados
         /// </summary>
         /// <returns></returns>
-        public List<Cliente> getAll()
+        public List<Cliente> getAllVentas()
         {
             try
             {
@@ -34,6 +34,36 @@ namespace BackEnd.DAOS
                     datos.Telefono = (String)r.ItemArray[2];
                     datos.Direccion = (String)r.ItemArray[3];
                     datos.DeudaTotal = (Decimal)r.ItemArray[4];
+
+
+                    lista.Add(datos);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener datos del Cliente");
+            }
+
+        }
+        public List<Cliente> getAllClientes()
+        {
+            try
+            {
+                List<Cliente> lista = new List<Cliente>();
+                ConexionMySQL con = new ConexionMySQL();
+
+                DataSet dat = con.LLenaComboGrid("SELECT * from cliente order by idCliente" + ";");
+                DataTable dt = dat.Tables[0];
+                Cliente datos;
+                foreach (DataRow r in dt.Rows)
+                {
+                    datos = new Cliente();
+                    datos.IdCliente = (int)r.ItemArray[0];
+                    datos.Nombre = (String)r.ItemArray[1];
+                    datos.Telefono = (String)r.ItemArray[2];
+                    datos.Direccion = (String)r.ItemArray[3];
+                 
 
 
                     lista.Add(datos);
