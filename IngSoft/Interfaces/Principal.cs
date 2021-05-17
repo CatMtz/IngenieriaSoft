@@ -68,15 +68,14 @@ namespace IngSoft.Interfaces
         /// <param name="e"></param>
         private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int valorCelda = int.Parse(grvClientes.Rows[grvClientes.CurrentRow.Index].Cells[0].Value.ToString());
-            new Pagos(valorCelda).Visible = true;
+          
            
         }
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            new AñadirCliente().Show();
+           
         }
 
         private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -92,7 +91,6 @@ namespace IngSoft.Interfaces
         /// <param name="e"></param>
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Añadir_Producto().Show();
         }
 
        
@@ -160,6 +158,15 @@ namespace IngSoft.Interfaces
             new ReporteDeDeudas().Show();
         }
 
-     
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
+            int valorCelda = int.Parse(grvClientes.Rows[grvClientes.CurrentRow.Index].Cells[0].Value.ToString());
+            new Pagos(valorCelda).Visible = true;
+        }
+
+        private void listaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Clientes().Show();
+        }
     }
 }

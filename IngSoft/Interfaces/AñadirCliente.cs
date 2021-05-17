@@ -17,6 +17,7 @@ namespace IngSoft.Interfaces
         public AñadirCliente()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
@@ -57,6 +58,11 @@ namespace IngSoft.Interfaces
                 MessageBox.Show("El número de telefono es incorrecto, debe contener 10 digitos");
                 return false;
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

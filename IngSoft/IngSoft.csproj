@@ -58,6 +58,12 @@
     <Compile Include="Interfaces\AñadirCliente.Designer.cs">
       <DependentUpon>AñadirCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Control_de_acceso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\AñadirCliente.resx">
       <DependentUpon>AñadirCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Control_de_acceso.resx">
       <DependentUpon>Control_de_acceso.cs</DependentUpon>

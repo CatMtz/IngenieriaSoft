@@ -69,7 +69,6 @@ namespace IngSoft.Interfaces
         {
             if (e.ColumnIndex == 5)
             {
-                MessageBox.Show("Editar");
                 int valorCelda = int.Parse(grvProductos.Rows[grvProductos.CurrentRow.Index].Cells[0].Value.ToString());
                 new EditProducto(valorCelda).Show();
 
@@ -112,6 +111,12 @@ namespace IngSoft.Interfaces
 
             btn.UseColumnTextForButtonValue = true;
             btn1.UseColumnTextForButtonValue = true;
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            new Añadir_Producto().Show();
 
         }
     }
