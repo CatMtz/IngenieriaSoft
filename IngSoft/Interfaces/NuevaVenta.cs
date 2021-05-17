@@ -94,8 +94,10 @@ namespace IngSoft.Interfaces
                                  int.Parse(nupCantidad.Value + ""), 1000, listaProductos[cmbProducto.SelectedIndex].IdProducto);
                 ventas.Add(ven);
                 detalles.Add(det);
+                grvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 grvProductos.DataSource = null;
                 grvProductos.DataSource = ventas;
+                grvProductos.Columns[0].Visible = false;
                 grvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 grvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 grvProductos.ForeColor = Color.Black;
@@ -124,7 +126,7 @@ namespace IngSoft.Interfaces
         private void button1_Click(object sender, EventArgs e)
         {
 
-
+            int cont = 0;
             try
             {
                 if (ventas.Count > 0 )
@@ -133,28 +135,44 @@ namespace IngSoft.Interfaces
                     {
                         if (new DaoVenta().registrar(vent))
                         {
-
-                            MessageBox.Show("Venta guardada con exito");
+                            if (new DAOProducto().RegistroDetalle(detalles[cont]))
+                            {
+                                cont++;
+                            }
                         }
                         else
                         {
                             MessageBox.Show("La venta no se realizo con exito");
                         }
                     }
-                    foreach (Detalleproducto det in detalles)
-                    {
-                        new DAOProducto().RegistroDetalle(det);
-                    }
 
                 }
+                else
+                {
+                    MessageBox.Show("Debe haber almenos un producto");
+                }
 
-               
+                cont = 0;
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+            grvProductos.DataSource = null;
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            int valor = grvProductos.CurrentRow.Index;
+            if (ventas.Count > 0)
+            {
+                ventas.Remove(ventas[valor]);
+                detalles.Remove(detalles[valor]);
+            }
+          
+
+
         }
     }
 }
