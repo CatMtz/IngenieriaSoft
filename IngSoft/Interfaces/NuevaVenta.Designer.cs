@@ -42,6 +42,7 @@ namespace IngSoft.Interfaces
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.grvProductos = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnQuitar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvProductos)).BeginInit();
             this.SuspendLayout();
@@ -81,9 +82,9 @@ namespace IngSoft.Interfaces
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(94, 230);
+            this.btnRegistrar.Location = new System.Drawing.Point(110, 230);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(124, 26);
+            this.btnRegistrar.Size = new System.Drawing.Size(96, 27);
             this.btnRegistrar.TabIndex = 5;
             this.btnRegistrar.Text = "Agregar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -92,7 +93,7 @@ namespace IngSoft.Interfaces
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalir.Location = new System.Drawing.Point(692, 264);
+            this.btnSalir.Location = new System.Drawing.Point(800, 265);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 6;
@@ -152,7 +153,7 @@ namespace IngSoft.Interfaces
             this.cmbTipo.Items.AddRange(new object[] {
             "Credito",
             "Contado"});
-            this.cmbTipo.Location = new System.Drawing.Point(247, 231);
+            this.cmbTipo.Location = new System.Drawing.Point(249, 231);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(87, 26);
             this.cmbTipo.TabIndex = 11;
@@ -163,12 +164,12 @@ namespace IngSoft.Interfaces
             this.grvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvProductos.Location = new System.Drawing.Point(309, 12);
             this.grvProductos.Name = "grvProductos";
-            this.grvProductos.Size = new System.Drawing.Size(458, 213);
+            this.grvProductos.Size = new System.Drawing.Size(574, 213);
             this.grvProductos.TabIndex = 12;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(501, 246);
+            this.button1.Location = new System.Drawing.Point(462, 245);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 30);
             this.button1.TabIndex = 13;
@@ -176,12 +177,23 @@ namespace IngSoft.Interfaces
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnQuitar
+            // 
+            this.btnQuitar.Location = new System.Drawing.Point(659, 245);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(83, 30);
+            this.btnQuitar.TabIndex = 14;
+            this.btnQuitar.Text = "Quitar";
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
             // NuevaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(779, 306);
+            this.ClientSize = new System.Drawing.Size(887, 302);
+            this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grvProductos);
             this.Controls.Add(this.cmbTipo);
@@ -225,5 +237,6 @@ namespace IngSoft.Interfaces
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.DataGridView grvProductos;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnQuitar;
     }
 }
