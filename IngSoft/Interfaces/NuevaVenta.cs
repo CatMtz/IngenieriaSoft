@@ -20,6 +20,8 @@ namespace IngSoft.Interfaces
         List<Decimal> precios = new List<Decimal>();
         List<Cliente> listaClientes = new DAOCliente().getAllClientes();
         List<String> cli = new List<String>();
+        List<Venta> ventas = new List<Venta>();
+        List<Detalleproducto> detalles = new List<Detalleproducto>();
 
         public NuevaVenta(int id)
         {
@@ -81,29 +83,31 @@ namespace IngSoft.Interfaces
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+          
+
             try
             {
-                
-                Venta ven = new Venta(idgerent, cmbCliente.SelectedIndex+1, cmbProducto.Text,
-                                     (Decimal.Parse(txtPrecio.Text)), cmbTipo.Text,
-                                     (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value));
+                Venta ven = new Venta(idgerent, cmbCliente.SelectedIndex + 1, cmbProducto.Text,
+                                    (Decimal.Parse(txtPrecio.Text)), cmbTipo.Text,
+                                    (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value));
                 Detalleproducto det = new Detalleproducto(Decimal.Parse(txtPrecio.Text),
-                                 int.Parse(nupCantidad.Value+""), 1000, listaProductos[cmbProducto.SelectedIndex].IdProducto);
-                
-                if (new DaoVenta().registrar(ven))
-                {
-                    new DAOProducto().RegistroDetalle(det);
-                    MessageBox.Show("Venta guardada con exito");
-                }else
-                {
-                    MessageBox.Show("La venta no se realizo con exito");
-                }
+                                 int.Parse(nupCantidad.Value + ""), 1000, listaProductos[cmbProducto.SelectedIndex].IdProducto);
+                ventas.Add(ven);
+                detalles.Add(det);
+                grvProductos.DataSource = null;
+                grvProductos.DataSource = ventas;
+                grvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                grvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                grvProductos.ForeColor = Color.Black;
+                grvProductos.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+                grvProductos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             }
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
+
         }
 
         private void btnSalir_MouseLeave(object sender, EventArgs e)
@@ -115,6 +119,42 @@ namespace IngSoft.Interfaces
         {
             btnSalir.BackColor = Color.Red;
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            try
+            {
+                if (ventas.Count > 0 )
+                {
+                    foreach (Venta vent in ventas)
+                    {
+                        if (new DaoVenta().registrar(vent))
+                        {
+
+                            MessageBox.Show("Venta guardada con exito");
+                        }
+                        else
+                        {
+                            MessageBox.Show("La venta no se realizo con exito");
+                        }
+                    }
+                    foreach (Detalleproducto det in detalles)
+                    {
+                        new DAOProducto().RegistroDetalle(det);
+                    }
+
+                }
+
+               
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

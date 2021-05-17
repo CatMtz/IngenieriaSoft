@@ -17,6 +17,7 @@ namespace IngSoft.Interfaces
         public Añadir_Producto()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
       
