@@ -69,6 +69,8 @@
             this.btnAgregaar.Text = "Agregar";
             this.btnAgregaar.UseVisualStyleBackColor = true;
             this.btnAgregaar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregaar.MouseLeave += new System.EventHandler(this.btnAgregaar_MouseLeave);
+            this.btnAgregaar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAgregaar_MouseMove);
             // 
             // Productos
             // 

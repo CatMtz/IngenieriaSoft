@@ -54,6 +54,7 @@ namespace IngSoft.Interfaces
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(69, 379);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -103,6 +104,8 @@ namespace IngSoft.Interfaces
             this.btnVerificar.Text = "Verificar";
             this.btnVerificar.UseVisualStyleBackColor = true;
             this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
+            this.btnVerificar.MouseLeave += new System.EventHandler(this.btnVerificar_MouseLeave);
+            this.btnVerificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnVerificar_MouseMove);
             // 
             // dtpFecha
             // 

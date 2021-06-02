@@ -82,6 +82,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(28, 235);
+            this.txtDescripcion.MaxLength = 150;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(250, 25);
@@ -90,6 +91,7 @@
             // txtCategoria
             // 
             this.txtCategoria.Location = new System.Drawing.Point(73, 178);
+            this.txtCategoria.MaxLength = 15;
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(151, 20);
             this.txtCategoria.TabIndex = 15;
@@ -117,6 +119,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(73, 110);
+            this.txtPrecio.MaxLength = 10;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(151, 20);
             this.txtPrecio.TabIndex = 12;
@@ -124,6 +127,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(73, 43);
+            this.txtNombre.MaxLength = 35;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(151, 20);
             this.txtNombre.TabIndex = 11;

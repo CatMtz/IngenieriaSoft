@@ -47,6 +47,8 @@
             this.btnIniciar.Text = "INICIAR";
             this.btnIniciar.UseVisualStyleBackColor = false;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
+            this.btnIniciar.MouseLeave += new System.EventHandler(this.btnIniciar_MouseLeave);
+            this.btnIniciar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnIniciar_MouseMove);
             // 
             // label1
             // 
@@ -75,6 +77,7 @@
             this.txtUsuario.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.Black;
             this.txtUsuario.Location = new System.Drawing.Point(12, 49);
+            this.txtUsuario.MaxLength = 10;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(220, 25);
             this.txtUsuario.TabIndex = 1;
@@ -84,6 +87,7 @@
             this.txtContrasenia.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenia.ForeColor = System.Drawing.Color.Black;
             this.txtContrasenia.Location = new System.Drawing.Point(12, 118);
+            this.txtContrasenia.MaxLength = 40;
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(220, 25);

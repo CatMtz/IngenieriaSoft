@@ -21,7 +21,7 @@ namespace BackEnd
             String servidor = "localhost";
             String puerto = "3306";
             String usuario = "root";
-            String password = "root";
+            String password = "holamundo123jessi";
             String database = "ingsoft";
             //Cadena de conexion
 

@@ -51,6 +51,7 @@ namespace IngSoft.Interfaces
             // 
             this.cmbCliente.FormattingEnabled = true;
             this.cmbCliente.Location = new System.Drawing.Point(97, 27);
+            this.cmbCliente.MaxLength = 30;
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(190, 26);
             this.cmbCliente.TabIndex = 0;
@@ -59,6 +60,7 @@ namespace IngSoft.Interfaces
             // 
             this.cmbProducto.FormattingEnabled = true;
             this.cmbProducto.Location = new System.Drawing.Point(97, 78);
+            this.cmbProducto.MaxLength = 35;
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(190, 26);
             this.cmbProducto.TabIndex = 1;
@@ -76,6 +78,7 @@ namespace IngSoft.Interfaces
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(98, 128);
+            this.txtPrecio.MaxLength = 10;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(121, 24);
             this.txtPrecio.TabIndex = 3;
@@ -89,6 +92,8 @@ namespace IngSoft.Interfaces
             this.btnRegistrar.Text = "Agregar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.btnRegistrar.MouseLeave += new System.EventHandler(this.btnRegistrar_MouseLeave);
+            this.btnRegistrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRegistrar_MouseMove);
             // 
             // btnSalir
             // 
@@ -176,6 +181,8 @@ namespace IngSoft.Interfaces
             this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
             // btnQuitar
             // 
@@ -186,6 +193,8 @@ namespace IngSoft.Interfaces
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            this.btnQuitar.MouseLeave += new System.EventHandler(this.btnQuitar_MouseLeave);
+            this.btnQuitar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnQuitar_MouseMove);
             // 
             // NuevaVenta
             // 
