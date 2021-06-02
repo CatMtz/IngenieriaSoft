@@ -53,6 +53,8 @@
             this.ButtonEditar.Text = "Editar";
             this.ButtonEditar.UseVisualStyleBackColor = false;
             this.ButtonEditar.Click += new System.EventHandler(this.ButtonEditar_Click);
+            this.ButtonEditar.MouseLeave += new System.EventHandler(this.ButtonEditar_MouseLeave);
+            this.ButtonEditar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ButtonEditar_MouseMove);
             // 
             // buttonsalir
             // 
@@ -67,6 +69,8 @@
             this.buttonsalir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonsalir.UseVisualStyleBackColor = false;
             this.buttonsalir.Click += new System.EventHandler(this.buttonsalir_Click);
+            this.buttonsalir.MouseLeave += new System.EventHandler(this.buttonsalir_MouseLeave);
+            this.buttonsalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.buttonsalir_MouseMove);
             // 
             // label4
             // 
@@ -105,6 +109,7 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(9, 187);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtDireccion.MaxLength = 40;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(226, 20);
             this.txtDireccion.TabIndex = 13;
@@ -113,6 +118,7 @@
             // 
             this.txttelefono.Location = new System.Drawing.Point(23, 111);
             this.txttelefono.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txttelefono.MaxLength = 10;
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(179, 20);
             this.txttelefono.TabIndex = 12;
@@ -121,6 +127,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(41, 43);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(144, 20);
             this.txtNombre.TabIndex = 10;

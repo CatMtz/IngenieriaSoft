@@ -48,5 +48,25 @@ namespace IngSoft.Interfaces
         {
             this.Dispose();
         }
+
+        private void ButtonEditar_MouseMove(object sender, MouseEventArgs e)
+        {
+            ButtonEditar.BackColor = Color.Yellow;
+        }
+
+        private void ButtonEditar_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonEditar.BackColor = Color.Transparent;
+        }
+
+        private void buttonsalir_MouseMove(object sender, MouseEventArgs e)
+        {
+            buttonsalir.BackColor = Color.Red;
+        }
+
+        private void buttonsalir_MouseLeave(object sender, EventArgs e)
+        {
+            buttonsalir.BackColor = Color.Transparent;
+        }
     }
 }

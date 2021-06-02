@@ -56,7 +56,7 @@ namespace IngSoft.Interfaces
 
         private void buttonsalir_MouseLeave(object sender, EventArgs e)
         {
-            buttonsalir.BackColor = Color.Silver;
+            buttonsalir.BackColor = Color.Transparent;
 
         }
 
@@ -118,6 +118,16 @@ namespace IngSoft.Interfaces
         {
             new Añadir_Producto().Show();
 
+        }
+
+        private void btnAgregaar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnAgregaar.BackColor = Color.Yellow;
+        }
+
+        private void btnAgregaar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregaar.BackColor = Color.Transparent;
         }
     }
        

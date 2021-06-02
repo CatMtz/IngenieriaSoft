@@ -35,13 +35,13 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaPorMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblGerente = new System.Windows.Forms.Label();
             this.btnPagos = new System.Windows.Forms.Button();
-            this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grvClientes)).BeginInit();
             this.menu.SuspendLayout();
@@ -95,7 +95,7 @@
             this.menu.Location = new System.Drawing.Point(12, 9);
             this.menu.Name = "menu";
             this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menu.Size = new System.Drawing.Size(340, 25);
+            this.menu.Size = new System.Drawing.Size(248, 25);
             this.menu.TabIndex = 1;
             this.menu.Text = "Menu";
             // 
@@ -111,7 +111,7 @@
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.editarToolStripMenuItem.Text = "Lista";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click_1);
             // 
@@ -123,6 +123,13 @@
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // listaToolStripMenuItem
+            // 
+            this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.listaToolStripMenuItem.Text = "Lista";
+            this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -177,13 +184,8 @@
             this.btnPagos.Text = "Pagos";
             this.btnPagos.UseVisualStyleBackColor = true;
             this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
-            // 
-            // listaToolStripMenuItem
-            // 
-            this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.listaToolStripMenuItem.Text = "Lista";
-            this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
+            this.btnPagos.MouseLeave += new System.EventHandler(this.btnPagos_MouseLeave);
+            this.btnPagos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnPagos_MouseMove);
             // 
             // pictureBox1
             // 

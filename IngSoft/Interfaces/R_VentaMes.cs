@@ -75,5 +75,15 @@ namespace IngSoft.Interfaces
             }
            
         }
+
+        private void buttonVerificar_MouseMove(object sender, MouseEventArgs e)
+        {
+            buttonVerificar.BackColor = Color.Yellow;
+        }
+
+        private void buttonVerificar_MouseLeave(object sender, EventArgs e)
+        {
+            buttonVerificar.BackColor = Color.Transparent;
+        }
     }
 }

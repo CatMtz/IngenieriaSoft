@@ -132,19 +132,19 @@ namespace IngSoft.Interfaces
 
         private void btnCerrarsesion_MouseLeave(object sender, EventArgs e)
         {
-            btnCerrarsesion.BackColor = Color.Silver;
+            btnCerrarsesion.BackColor = Color.Transparent;
 
         }
 
         private void btnNuevaV_MouseLeave(object sender, EventArgs e)
         {
-            btnNuevaV.BackColor = Color.Silver;
+            btnNuevaV.BackColor = Color.Transparent;
 
         }
 
         private void btnNuevaV_MouseMove(object sender, MouseEventArgs e)
         {
-            btnNuevaV.BackColor = Color.Green;
+            btnNuevaV.BackColor = Color.Yellow;
 
         }
 
@@ -167,6 +167,16 @@ namespace IngSoft.Interfaces
         private void listaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Clientes().Show();
+        }
+
+        private void btnPagos_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnPagos.BackColor = Color.Blue;
+        }
+
+        private void btnPagos_MouseLeave(object sender, EventArgs e)
+        {
+            btnPagos.BackColor = Color.Transparent;
         }
     }
 }

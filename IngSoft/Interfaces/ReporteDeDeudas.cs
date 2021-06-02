@@ -13,6 +13,7 @@ using BackEnd.MODELOS;
 
 namespace IngSoft.Interfaces
 {
+    
     public partial class ReporteDeDeudas : Form
     {
         public ReporteDeDeudas()

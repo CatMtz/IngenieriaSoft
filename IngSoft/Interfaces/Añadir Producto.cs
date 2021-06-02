@@ -74,7 +74,7 @@ namespace IngSoft.Interfaces
 
         private void agregar_MouseLeave(object sender, EventArgs e)
         {
-            agregar.BackColor = Color.Green;
+            agregar.BackColor = Color.Yellow;
 
         }
 

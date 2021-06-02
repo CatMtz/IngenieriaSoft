@@ -50,5 +50,15 @@ namespace IngSoft.Interfaces
         {
             this.Close();
         }
+
+        private void btnIniciar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnIniciar.BackColor = Color.Yellow;
+        }
+
+        private void btnIniciar_MouseLeave(object sender, EventArgs e)
+        {
+            btnIniciar.BackColor = Color.Transparent;
+        }
     }
 }

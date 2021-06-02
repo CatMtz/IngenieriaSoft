@@ -66,6 +66,8 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
+            this.btnSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSalir_MouseMove);
             // 
             // label1
             // 
@@ -127,7 +129,9 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(12, 50);
+            this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(197, 20);
@@ -135,7 +139,9 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(243, 132);
+            this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(197, 20);
@@ -150,7 +156,9 @@
             // 
             // txtDireccion
             // 
+            this.txtDireccion.Enabled = false;
             this.txtDireccion.Location = new System.Drawing.Point(11, 132);
+            this.txtDireccion.MaxLength = 40;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(197, 20);
@@ -166,6 +174,8 @@
             this.btnAbonar.Text = "Abonar";
             this.btnAbonar.UseVisualStyleBackColor = true;
             this.btnAbonar.Click += new System.EventHandler(this.btnAbonar_Click);
+            this.btnAbonar.MouseLeave += new System.EventHandler(this.btnAbonar_MouseLeave);
+            this.btnAbonar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAbonar_MouseMove);
             // 
             // pictureBox1
             // 

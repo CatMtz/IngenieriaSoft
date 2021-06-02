@@ -115,6 +115,8 @@ namespace IngSoft.Interfaces
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = false;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
+            this.btnAñadir.MouseLeave += new System.EventHandler(this.btnAñadir_MouseLeave);
+            this.btnAñadir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAñadir_MouseMove);
             // 
             // btnSalir
             // 
@@ -126,6 +128,8 @@ namespace IngSoft.Interfaces
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
+            this.btnSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSalir_MouseMove);
             // 
             // AñadirCliente
             // 

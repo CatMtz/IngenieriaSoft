@@ -35,7 +35,7 @@ namespace IngSoft.Interfaces
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DTPFecha = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonVerificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -108,16 +108,18 @@ namespace IngSoft.Interfaces
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
             // 
-            // button1
+            // buttonVerificar
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(110, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Verificar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonVerificar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVerificar.Location = new System.Drawing.Point(110, 92);
+            this.buttonVerificar.Name = "buttonVerificar";
+            this.buttonVerificar.Size = new System.Drawing.Size(75, 23);
+            this.buttonVerificar.TabIndex = 23;
+            this.buttonVerificar.Text = "Verificar";
+            this.buttonVerificar.UseVisualStyleBackColor = true;
+            this.buttonVerificar.Click += new System.EventHandler(this.button1_Click);
+            this.buttonVerificar.MouseLeave += new System.EventHandler(this.buttonVerificar_MouseLeave);
+            this.buttonVerificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.buttonVerificar_MouseMove);
             // 
             // R_VentaMes
             // 
@@ -125,7 +127,7 @@ namespace IngSoft.Interfaces
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(539, 448);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonVerificar);
             this.Controls.Add(this.DTPFecha);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grvVenta);
@@ -153,6 +155,6 @@ namespace IngSoft.Interfaces
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker DTPFecha;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonVerificar;
     }
 }
