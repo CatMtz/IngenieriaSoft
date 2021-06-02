@@ -15,6 +15,7 @@ namespace IngSoft.Interfaces
     public partial class Pagos : Form
     {
         int idcliente = 0;
+       
         public Pagos()
         {
             InitializeComponent();
@@ -29,17 +30,39 @@ namespace IngSoft.Interfaces
 
         private void Pagos_Load(object sender, EventArgs e)
         {
+            List<Pago> datospago = new DAOPago().getAll(idcliente);
+            Decimal total = 0;
+            int i = 0;
             grvPagos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvPagos.DataSource = null;
-            if (new DAOPago().getAll(idcliente).Count > 0)
+            if (datospago.Count > 0)
             {
-                grvPagos.DataSource = new DAOPago().getAll(idcliente);
+                foreach(Pago dato in datospago)
+                {
+                    if (dato.Saldo <= 0)
+                    {
+                        datospago[i].Producto="PAGADO";
+                    }
+                    i++;
+                }
+
+                grvPagos.DataSource = datospago;
                 grvPagos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 grvPagos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 grvPagos.ForeColor = Color.Black;
                 grvPagos.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
                 grvPagos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 grvPagos.Columns[9].Visible = false;
+
+                
+
+                foreach(Pago pago in datospago)
+                {
+                    total += pago.Saldo;
+                   
+                }
+                txtDeudatotal.Text = "$"+total;
+                
             }else
             {
 
@@ -48,7 +71,7 @@ namespace IngSoft.Interfaces
             txtNombre.Text = datos.Nombre;
             txtDireccion.Text = datos.Direccion;
             txtTelefono.Text = datos.Telefono;
-            txtDeudatotal.Text =""+ datos.DeudaTotal;
+            
 
 
 
@@ -65,25 +88,55 @@ namespace IngSoft.Interfaces
         {
             try
             {
-                int valorCelda = int.Parse(grvPagos.Rows[grvPagos.CurrentRow.Index].Cells[2].Value.ToString());
+                int valorCelda = int.Parse(grvPagos.Rows[grvPagos.CurrentRow.Index].Cells[0].Value.ToString());
                 Pago pag = new Pago(valorCelda, Decimal.Parse(txtCantidad.Text));
 
-                if (new DAOPago().registrar(pag))
+                if ((int.Parse(grvPagos.Rows[grvPagos.CurrentRow.Index].Cells[6].Value.ToString()) == 0))
                 {
-                    MessageBox.Show("El pago se realizo con exito");
-                    txtCantidad.Text = "";
+                    MessageBox.Show("No puede abonarse por que ya se liquidó la cuenta");
                 }
-                else
+                else 
                 {
-                    MessageBox.Show("No pudo realizarse el pago");
+                    if (new DAOPago().registrar(pag))
+                    {
+                        MessageBox.Show("El pago se realizo con exito");
+                        txtCantidad.Text = "";
+                        actualizartabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No pudo realizarse el pago");
+                    }
                 }
-
             }
             catch (Exception ex)
             {
 
                 throw;
             }
+        }
+
+
+        public void actualizartabla()
+        {
+            List<Pago> datospago = new DAOPago().getAll(idcliente);
+            Decimal total = 0;
+            grvPagos.DataSource = datospago;
+            grvPagos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            grvPagos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            grvPagos.ForeColor = Color.Black;
+            grvPagos.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            grvPagos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            grvPagos.Columns[9].Visible = false;
+
+
+
+            foreach (Pago pago in datospago)
+            {
+                total += pago.Saldo;
+
+            }
+            txtDeudatotal.Text = "$" + total;
         }
     }
 }
