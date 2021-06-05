@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackEnd.DAOS;
@@ -33,15 +33,25 @@ namespace IngSoft.Interfaces
         private void ButtonEditar_Click(object sender, EventArgs e)
         {
             Cliente nuevo = new Cliente(txtNombre.Text, txttelefono.Text, txtDireccion.Text);
-            if (new DAOCliente().editar(nuevo, id))
+
+
+            if(verificarCadena(nuevo.Nombre)&&verificarDireccion(nuevo.Direccion)
+                && verificarTel(nuevo.Telefono))
             {
-             MessageBox.Show("Actualización exitosa");
-                this.Dispose();
+
+
+                if (new DAOCliente().editar(nuevo, id))
+                {
+                    MessageBox.Show("Actualización exitosa");
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error");
+                }
             }
-            else
-            {
-                MessageBox.Show("Ocurrio un error");
-            }
+
+
         }
 
         private void buttonsalir_Click(object sender, EventArgs e)
@@ -67,6 +77,56 @@ namespace IngSoft.Interfaces
         private void buttonsalir_MouseLeave(object sender, EventArgs e)
         {
             buttonsalir.BackColor = Color.Transparent;
+        }
+
+
+
+
+        public bool verificarTel(String tel)
+        {
+
+            Regex rex = new Regex("^[0-9]{10,10}$");
+            if (rex.IsMatch(tel))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("El número de telefono es incorrecto, debe contener 10 digitos");
+                return false;
+            }
+
+        }
+
+        public bool verificarCadena(String Nombre)
+        {
+            Regex rex = new Regex("^[a-zA-Z\\s]{1,30}$");
+            if (rex.IsMatch(Nombre))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("El nombre solo debe tener letras (Maximo 30 caracteres)");
+
+                return false;
+            }
+        }
+        
+        public bool verificarDireccion(String Direc)
+        {
+            Regex rex = new Regex("^[a-zA-Z\\s]{1,40}$");
+            if (rex.IsMatch(Direc))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("La dirección debe tener maximo 40 caracteres");
+
+                return false;
+            }
+
         }
     }
 }

@@ -37,7 +37,6 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'Omar Martinez','4451223569','Prol. 5 de mayo #129'),(2,'jesica solorio','123456890','panindicuaro'),(3,'Andrea Anguiano','1234567890','El charco');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +65,6 @@ CREATE TABLE `detalleproducto` (
 
 LOCK TABLES `detalleproducto` WRITE;
 /*!40000 ALTER TABLE `detalleproducto` DISABLE KEYS */;
-INSERT INTO `detalleproducto` VALUES (60.00,3,12,1),(180.00,1,13,58),(180.00,1,14,59),(180.00,1,15,53),(180.00,2,16,57),(60.00,1,19,1),(180.00,2,20,44),(180.00,3,21,58),(60.00,1,22,26);
 /*!40000 ALTER TABLE `detalleproducto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +110,7 @@ CREATE TABLE `pagos` (
   PRIMARY KEY (`idPago`),
   KEY `fk_Pagos_venta1_idx` (`idCompra`),
   CONSTRAINT `fk_Pagos_venta1` FOREIGN KEY (`idCompra`) REFERENCES `venta` (`idCompra`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,7 +119,6 @@ CREATE TABLE `pagos` (
 
 LOCK TABLES `pagos` WRITE;
 /*!40000 ALTER TABLE `pagos` DISABLE KEYS */;
-INSERT INTO `pagos` VALUES (20,'2021-05-11 16:22:25',12,100.00),(22,'2021-05-11 16:42:57',12,30.00),(23,'2021-05-11 16:46:09',12,10.00),(24,'2021-05-11 17:13:53',15,20.00);
 /*!40000 ALTER TABLE `pagos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -208,7 +205,6 @@ CREATE TABLE `venta` (
 
 LOCK TABLES `venta` WRITE;
 /*!40000 ALTER TABLE `venta` DISABLE KEYS */;
-INSERT INTO `venta` VALUES (12,1,1,'MATE CANTIMPLORA M1',60.00,'Credito',40.00,'2021-05-11 14:02:29'),(13,1,3,'SOCK DART',180.00,'Credito',180.00,'2021-05-11 14:02:47'),(14,1,3,'TENIS TRECK 501',180.00,'Credito',180.00,'2021-05-11 14:03:10'),(15,1,1,'N-020 7.5',180.00,'Credito',160.00,'2021-05-11 17:09:08'),(16,1,1,'NIKE XP',180.00,'Credito',360.00,'2021-05-12 16:21:04'),(17,1,1,'MATE CANTIMPLORA M1',60.00,'Credito',60.00,'2021-05-16 23:01:52'),(18,1,1,'MATE CANTIMPLORA M1',60.00,'Credito',60.00,'2021-05-16 23:01:54'),(19,1,1,'MISTER VASO',35.00,'Credito',35.00,'2021-05-16 23:01:55'),(20,1,1,'SHADOW',180.00,'Credito',360.00,'2021-05-17 13:45:09'),(21,1,1,'SOCK DART',180.00,'Credito',540.00,'2021-05-17 13:46:03'),(22,1,2,'BOTELLA AVENGERS',60.00,'Credito',60.00,'2021-05-17 14:19:12');
 /*!40000 ALTER TABLE `venta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,13 +245,11 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `R_Ventaprod`(IN fecha datetime)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `R_Ventaprod`(IN mes int)
 BEGIN
  select v.idcompra, v.descripcion,count(*) as Cantidad,sum(Cantidad_Venta) Total, v.fecha
 from  Venta v join cliente c on v.idcliente=c.idcliente 
-where  
-(day(v.fecha) between day(fecha) and day(now()) ) and (month(v.fecha) 
-between month(fecha) and Month(now()) )and (year(v.fecha)=year(fecha) )
+where  (month(v.fecha)=mes)
 group by v.descripcion ;
 END ;;
 DELIMITER ;
@@ -273,4 +267,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-17 14:21:34
+-- Dump completed on 2021-06-04 20:06:39

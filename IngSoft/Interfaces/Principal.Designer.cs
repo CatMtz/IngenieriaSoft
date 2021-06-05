@@ -55,7 +55,7 @@
             this.btnCerrarsesion.Location = new System.Drawing.Point(611, 359);
             this.btnCerrarsesion.Name = "btnCerrarsesion";
             this.btnCerrarsesion.Size = new System.Drawing.Size(111, 30);
-            this.btnCerrarsesion.TabIndex = 2;
+            this.btnCerrarsesion.TabIndex = 4;
             this.btnCerrarsesion.Text = "Cerrar Sesión";
             this.btnCerrarsesion.UseVisualStyleBackColor = true;
             this.btnCerrarsesion.Click += new System.EventHandler(this.btnCerrarsesion_Click);
@@ -77,7 +77,7 @@
             this.btnNuevaV.Location = new System.Drawing.Point(3, 343);
             this.btnNuevaV.Name = "btnNuevaV";
             this.btnNuevaV.Size = new System.Drawing.Size(103, 31);
-            this.btnNuevaV.TabIndex = 6;
+            this.btnNuevaV.TabIndex = 3;
             this.btnNuevaV.Text = "Nueva Venta";
             this.btnNuevaV.UseVisualStyleBackColor = true;
             this.btnNuevaV.Click += new System.EventHandler(this.btnNuevaV_Click);
@@ -111,7 +111,7 @@
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editarToolStripMenuItem.Text = "Lista";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click_1);
             // 
@@ -180,7 +180,7 @@
             this.btnPagos.Location = new System.Drawing.Point(560, 39);
             this.btnPagos.Name = "btnPagos";
             this.btnPagos.Size = new System.Drawing.Size(74, 32);
-            this.btnPagos.TabIndex = 9;
+            this.btnPagos.TabIndex = 2;
             this.btnPagos.Text = "Pagos";
             this.btnPagos.UseVisualStyleBackColor = true;
             this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);

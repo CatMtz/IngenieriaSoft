@@ -50,7 +50,7 @@
             this.btnSalir.Location = new System.Drawing.Point(406, 209);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 1;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -63,7 +63,7 @@
             this.button1.Location = new System.Drawing.Point(12, 207);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 27);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

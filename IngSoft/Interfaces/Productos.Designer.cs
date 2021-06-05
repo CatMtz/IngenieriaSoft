@@ -51,7 +51,7 @@
             this.buttonsalir.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.buttonsalir.Name = "buttonsalir";
             this.buttonsalir.Size = new System.Drawing.Size(81, 24);
-            this.buttonsalir.TabIndex = 19;
+            this.buttonsalir.TabIndex = 2;
             this.buttonsalir.Text = "Salir";
             this.buttonsalir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonsalir.UseVisualStyleBackColor = false;
@@ -65,7 +65,7 @@
             this.btnAgregaar.Location = new System.Drawing.Point(12, 438);
             this.btnAgregaar.Name = "btnAgregaar";
             this.btnAgregaar.Size = new System.Drawing.Size(75, 28);
-            this.btnAgregaar.TabIndex = 20;
+            this.btnAgregaar.TabIndex = 1;
             this.btnAgregaar.Text = "Agregar";
             this.btnAgregaar.UseVisualStyleBackColor = true;
             this.btnAgregaar.Click += new System.EventHandler(this.btnAgregar_Click);

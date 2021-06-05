@@ -54,7 +54,7 @@ namespace IngSoft.Interfaces
             this.cmbCliente.MaxLength = 30;
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(190, 26);
-            this.cmbCliente.TabIndex = 0;
+            this.cmbCliente.TabIndex = 1;
             // 
             // cmbProducto
             // 
@@ -63,7 +63,7 @@ namespace IngSoft.Interfaces
             this.cmbProducto.MaxLength = 35;
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(190, 26);
-            this.cmbProducto.TabIndex = 1;
+            this.cmbProducto.TabIndex = 2;
             this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
             // 
             // label1
@@ -101,7 +101,7 @@ namespace IngSoft.Interfaces
             this.btnSalir.Location = new System.Drawing.Point(800, 265);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
-            this.btnSalir.TabIndex = 6;
+            this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -118,7 +118,7 @@ namespace IngSoft.Interfaces
             0});
             this.nupCantidad.Name = "nupCantidad";
             this.nupCantidad.Size = new System.Drawing.Size(120, 24);
-            this.nupCantidad.TabIndex = 7;
+            this.nupCantidad.TabIndex = 4;
             this.nupCantidad.Value = new decimal(new int[] {
             1,
             0,
@@ -161,7 +161,7 @@ namespace IngSoft.Interfaces
             this.cmbTipo.Location = new System.Drawing.Point(249, 231);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(87, 26);
-            this.cmbTipo.TabIndex = 11;
+            this.cmbTipo.TabIndex = 6;
             this.cmbTipo.Text = "Tipo";
             // 
             // grvProductos
@@ -177,7 +177,7 @@ namespace IngSoft.Interfaces
             this.button1.Location = new System.Drawing.Point(462, 245);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 30);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -189,7 +189,7 @@ namespace IngSoft.Interfaces
             this.btnQuitar.Location = new System.Drawing.Point(659, 245);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(83, 30);
-            this.btnQuitar.TabIndex = 14;
+            this.btnQuitar.TabIndex = 8;
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);

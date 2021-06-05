@@ -39,6 +39,8 @@ namespace IngSoft.Interfaces
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNombre
@@ -82,28 +84,28 @@ namespace IngSoft.Interfaces
             this.txtNombre.Location = new System.Drawing.Point(100, 40);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(157, 24);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtApellidos
             // 
             this.txtApellidos.Location = new System.Drawing.Point(100, 89);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(157, 24);
-            this.txtApellidos.TabIndex = 5;
+            this.txtApellidos.TabIndex = 2;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(100, 137);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(157, 24);
-            this.txtDireccion.TabIndex = 6;
+            this.txtDireccion.TabIndex = 3;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(100, 187);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(157, 24);
-            this.txtTelefono.TabIndex = 7;
+            this.txtTelefono.TabIndex = 4;
             // 
             // btnAñadir
             // 
@@ -111,7 +113,7 @@ namespace IngSoft.Interfaces
             this.btnAñadir.Location = new System.Drawing.Point(139, 241);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(75, 27);
-            this.btnAñadir.TabIndex = 8;
+            this.btnAñadir.TabIndex = 5;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = false;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
@@ -124,19 +126,30 @@ namespace IngSoft.Interfaces
             this.btnSalir.Location = new System.Drawing.Point(282, 274);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 26);
-            this.btnSalir.TabIndex = 9;
+            this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
             this.btnSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSalir_MouseMove);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::IngSoft.Properties.Resources.LOGO;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(282, 59);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(162, 152);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // AñadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(369, 312);
+            this.ClientSize = new System.Drawing.Size(456, 308);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.txtTelefono);
@@ -154,6 +167,7 @@ namespace IngSoft.Interfaces
             this.MinimizeBox = false;
             this.Name = "AñadirCliente";
             this.Text = "Añadir Cliente";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +185,7 @@ namespace IngSoft.Interfaces
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
