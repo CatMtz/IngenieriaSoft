@@ -85,7 +85,7 @@
             this.txtDeudatotal.Name = "txtDeudatotal";
             this.txtDeudatotal.ReadOnly = true;
             this.txtDeudatotal.Size = new System.Drawing.Size(174, 20);
-            this.txtDeudatotal.TabIndex = 0;
+            this.txtDeudatotal.TabIndex = 4;
             // 
             // label2
             // 
@@ -145,7 +145,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(197, 20);
-            this.txtTelefono.TabIndex = 4;
+            this.txtTelefono.TabIndex = 3;
             // 
             // txtCantidad
             // 
@@ -162,7 +162,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(197, 20);
-            this.txtDireccion.TabIndex = 3;
+            this.txtDireccion.TabIndex = 2;
             // 
             // btnAbonar
             // 

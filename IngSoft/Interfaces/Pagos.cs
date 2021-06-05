@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackEnd.MODELOS;
@@ -88,14 +88,20 @@ namespace IngSoft.Interfaces
         {
             try
             {
+                Pago pag = new Pago();
                 int valorCelda = int.Parse(grvPagos.Rows[grvPagos.CurrentRow.Index].Cells[0].Value.ToString());
-                Pago pag = new Pago(valorCelda, Decimal.Parse(txtCantidad.Text));
-
+                if (txtCantidad.Text != null)
+                {
+                    if (verificarPrecio(txtCantidad.Text))
+                    {
+                        pag = new Pago(valorCelda, Decimal.Parse(txtCantidad.Text));
+                    }
+                }
                 if ((int.Parse(grvPagos.Rows[grvPagos.CurrentRow.Index].Cells[6].Value.ToString()) == 0))
                 {
                     MessageBox.Show("No puede abonarse por que ya se liquidó la cuenta");
                 }
-                else 
+                else if (pag.CantidadPago != 0)
                 {
                     if (new DAOPago().registrar(pag))
                     {
@@ -107,6 +113,10 @@ namespace IngSoft.Interfaces
                     {
                         MessageBox.Show("No pudo realizarse el pago");
                     }
+                }
+                else
+                {
+                    MessageBox.Show("No puede abonarse 0 pesos");
                 }
             }
             catch (Exception ex)
@@ -160,6 +170,22 @@ namespace IngSoft.Interfaces
             btnSalir.BackColor = Color.Transparent;
 
         }
-      
+
+
+        public bool verificarPrecio(String precio)
+        {
+
+            Regex rex = new Regex("^[0-9]*$");
+            if (rex.IsMatch(precio))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("La celda precio solo debe contener numeros");
+                return false;
+            }
+        }
+
     }
 }

@@ -22,7 +22,7 @@ namespace IngSoft.Interfaces
 
         private void R_VentaMes_Load(object sender, EventArgs e)
         {
-
+            cmbFecha.SelectedText = "Enero";
             grvVenta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grvVenta.DataSource = null;
 
@@ -52,7 +52,7 @@ namespace IngSoft.Interfaces
         private void button1_Click(object sender, EventArgs e)
         {
             Decimal total = 0;
-            int fec =int.Parse(DTPFecha.Value.Month.ToString());
+            int fec = cmbFecha.SelectedIndex + 1;
             List<ReporteVentaMes> list= new DAOReporte().getAllReporteVentaMes(fec);
             if (list.Count > 0)
             {

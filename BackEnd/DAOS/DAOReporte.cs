@@ -48,14 +48,14 @@ namespace BackEnd.DAOS
             }
 
         }
-        public List<ReporteProductosVendidos> getAllReporteProductos(String fecha)
+        public List<ReporteProductosVendidos> getAllReporteProductos(int mes)
         {
             try
             {
                 List<ReporteProductosVendidos> lista = new List<ReporteProductosVendidos>();
                 ConexionMySQL con = new ConexionMySQL();
 
-                DataSet dat = con.LLenaComboGrid("call R_Ventaprod('"+fecha+"')" + ";");
+                DataSet dat = con.LLenaComboGrid("call R_Ventaprod('"+mes+"')" + ";");
                 DataTable dt = dat.Tables[0];
                 ReporteProductosVendidos datos;
                 foreach (DataRow r in dt.Rows)

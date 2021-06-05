@@ -59,7 +59,7 @@ namespace IngSoft.Interfaces
             this.txtNombre.Location = new System.Drawing.Point(66, 62);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(192, 25);
-            this.txtNombre.TabIndex = 22;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtPrecio
             // 
@@ -67,7 +67,7 @@ namespace IngSoft.Interfaces
             this.txtPrecio.Location = new System.Drawing.Point(66, 134);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(192, 25);
-            this.txtPrecio.TabIndex = 23;
+            this.txtPrecio.TabIndex = 2;
             // 
             // txtCategoria
             // 
@@ -75,7 +75,7 @@ namespace IngSoft.Interfaces
             this.txtCategoria.Location = new System.Drawing.Point(66, 212);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(192, 25);
-            this.txtCategoria.TabIndex = 24;
+            this.txtCategoria.TabIndex = 3;
             // 
             // txtDescripcion
             // 
@@ -84,7 +84,7 @@ namespace IngSoft.Interfaces
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(192, 43);
-            this.txtDescripcion.TabIndex = 25;
+            this.txtDescripcion.TabIndex = 4;
             // 
             // label1
             // 
@@ -136,7 +136,7 @@ namespace IngSoft.Interfaces
             this.agregar.Location = new System.Drawing.Point(125, 351);
             this.agregar.Name = "agregar";
             this.agregar.Size = new System.Drawing.Size(79, 26);
-            this.agregar.TabIndex = 30;
+            this.agregar.TabIndex = 5;
             this.agregar.Text = "Agregar";
             this.agregar.UseVisualStyleBackColor = true;
             this.agregar.Click += new System.EventHandler(this.agregar_Click);
@@ -149,7 +149,7 @@ namespace IngSoft.Interfaces
             this.Salir.Location = new System.Drawing.Point(394, 364);
             this.Salir.Name = "Salir";
             this.Salir.Size = new System.Drawing.Size(78, 23);
-            this.Salir.TabIndex = 31;
+            this.Salir.TabIndex = 6;
             this.Salir.Text = "Salir";
             this.Salir.UseVisualStyleBackColor = true;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);

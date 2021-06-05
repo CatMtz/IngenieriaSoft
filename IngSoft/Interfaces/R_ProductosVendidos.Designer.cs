@@ -35,8 +35,8 @@ namespace IngSoft.Interfaces
             this.btnSalir = new System.Windows.Forms.Button();
             this.grvReporte = new System.Windows.Forms.DataGridView();
             this.btnVerificar = new System.Windows.Forms.Button();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbFecha = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grvReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,11 +46,11 @@ namespace IngSoft.Interfaces
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(123, 26);
+            this.label1.Location = new System.Drawing.Point(127, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.Size = new System.Drawing.Size(35, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Fecha";
+            this.label1.Text = "Mes";
             // 
             // txtTotal
             // 
@@ -59,7 +59,7 @@ namespace IngSoft.Interfaces
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(124, 24);
-            this.txtTotal.TabIndex = 4;
+            this.txtTotal.TabIndex = 3;
             // 
             // label3
             // 
@@ -79,7 +79,7 @@ namespace IngSoft.Interfaces
             this.btnSalir.Location = new System.Drawing.Point(483, 375);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(92, 28);
-            this.btnSalir.TabIndex = 7;
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -100,19 +100,12 @@ namespace IngSoft.Interfaces
             this.btnVerificar.Location = new System.Drawing.Point(108, 106);
             this.btnVerificar.Name = "btnVerificar";
             this.btnVerificar.Size = new System.Drawing.Size(75, 23);
-            this.btnVerificar.TabIndex = 10;
+            this.btnVerificar.TabIndex = 2;
             this.btnVerificar.Text = "Verificar";
             this.btnVerificar.UseVisualStyleBackColor = true;
             this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
             this.btnVerificar.MouseLeave += new System.EventHandler(this.btnVerificar_MouseLeave);
             this.btnVerificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnVerificar_MouseMove);
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Location = new System.Drawing.Point(12, 58);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(276, 24);
-            this.dtpFecha.TabIndex = 11;
             // 
             // pictureBox1
             // 
@@ -124,14 +117,35 @@ namespace IngSoft.Interfaces
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // cmbFecha
+            // 
+            this.cmbFecha.FormattingEnabled = true;
+            this.cmbFecha.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.cmbFecha.Location = new System.Drawing.Point(69, 74);
+            this.cmbFecha.Name = "cmbFecha";
+            this.cmbFecha.Size = new System.Drawing.Size(145, 26);
+            this.cmbFecha.TabIndex = 1;
+            // 
             // Reporte_de_Productos_Vendidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(598, 415);
+            this.Controls.Add(this.cmbFecha);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.btnVerificar);
             this.Controls.Add(this.grvReporte);
             this.Controls.Add(this.btnSalir);
@@ -161,7 +175,7 @@ namespace IngSoft.Interfaces
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView grvReporte;
         private System.Windows.Forms.Button btnVerificar;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cmbFecha;
     }
 }

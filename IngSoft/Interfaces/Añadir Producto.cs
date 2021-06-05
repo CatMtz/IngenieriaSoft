@@ -29,16 +29,20 @@ namespace IngSoft.Interfaces
 
                 if(txtNombre.Text!="" && txtPrecio.Text!= "" && txtDescripcion.Text!= "" && txtCategoria.Text != "")
                 {
-                    if (verificar(txtPrecio.Text))
+                    if (verificarNombre(txtNombre.Text) && verificarCategoria(txtCategoria.Text) && verificarDescripcion(txtDescripcion.Text))
                     {
-                        Producto prod = new Producto(txtNombre.Text, Decimal.Parse(txtPrecio.Text), txtDescripcion.Text, txtCategoria.Text);
-                        new DAOProducto().registrar(prod);
-                        MessageBox.Show("Se registro el producto con exito");
-                        txtNombre.Text = "";
-                        txtPrecio.Text = "";
-                        txtCategoria.Text = "";
-                        txtDescripcion.Text = "";
+                        if (verificarPrecio(txtPrecio.Text))
+                        {
+                            Producto prod = new Producto(txtNombre.Text, Decimal.Parse(txtPrecio.Text), txtDescripcion.Text, txtCategoria.Text);
+                            new DAOProducto().registrar(prod);
+                            MessageBox.Show("Se registro el producto con exito");
+                            txtNombre.Text = "";
+                            txtPrecio.Text = "";
+                            txtCategoria.Text = "";
+                            txtDescripcion.Text = "";
+                        }
                     }
+                   
                    
                 }
                 else
@@ -85,7 +89,7 @@ namespace IngSoft.Interfaces
         }
 
 
-        public bool verificar(String precio)
+        public bool verificarPrecio(String precio)
         {
 
             Regex rex = new Regex("^[0-9]*$");
@@ -96,6 +100,45 @@ namespace IngSoft.Interfaces
             else
             {
                 MessageBox.Show("La celda precio solo debe contener numeros");
+                return false;
+            }
+        }
+        public bool verificarNombre(String Nombre)
+        {
+            Regex rex = new Regex("^[a-zA-Z\\s]{1,35}$");
+            if (rex.IsMatch(Nombre))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("El nombre solo debe tener letras (Maximo 35 caracteres)");
+                return false;
+            }
+        }
+        public bool verificarCategoria(String Categoria)
+        {
+            Regex rex = new Regex("^[a-zA-Z\\s]{1,15}$");
+            if (rex.IsMatch(Categoria))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Categoria solo letras (Maximo 15 caracteres)");
+                return false;
+            }
+        }
+        public bool verificarDescripcion(String Descripcion)
+        {
+            Regex rex = new Regex("^[a-zA-Z\\s]{1,50}$");
+            if (rex.IsMatch(Descripcion))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Descripcion solo letras (Maximo 50 caracteres)");
                 return false;
             }
         }

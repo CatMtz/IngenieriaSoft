@@ -49,7 +49,7 @@
             this.btnSalir.Location = new System.Drawing.Point(319, 284);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(83, 33);
-            this.btnSalir.TabIndex = 19;
+            this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.button2_Click);
@@ -62,10 +62,10 @@
             this.btnEditar.Location = new System.Drawing.Point(105, 282);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(89, 32);
-            this.btnEditar.TabIndex = 18;
+            this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.button1_Click);
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             this.btnEditar.MouseLeave += new System.EventHandler(this.btnEditar_MouseLeave);
             this.btnEditar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnEditar_MouseMove);
             // 
@@ -86,7 +86,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(250, 25);
-            this.txtDescripcion.TabIndex = 16;
+            this.txtDescripcion.TabIndex = 4;
             // 
             // txtCategoria
             // 
@@ -94,7 +94,7 @@
             this.txtCategoria.MaxLength = 15;
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(151, 20);
-            this.txtCategoria.TabIndex = 15;
+            this.txtCategoria.TabIndex = 3;
             // 
             // labelCategoria
             // 
@@ -122,7 +122,7 @@
             this.txtPrecio.MaxLength = 10;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(151, 20);
-            this.txtPrecio.TabIndex = 12;
+            this.txtPrecio.TabIndex = 2;
             // 
             // txtNombre
             // 
@@ -130,7 +130,7 @@
             this.txtNombre.MaxLength = 35;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(151, 20);
-            this.txtNombre.TabIndex = 11;
+            this.txtNombre.TabIndex = 1;
             // 
             // labelNombre
             // 

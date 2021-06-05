@@ -24,7 +24,7 @@ namespace IngSoft.Interfaces
 
         private void btnVerificar_Click(object sender, EventArgs e)
         {
-            String fec = dtpFecha.Value.Year.ToString() +"-"+ dtpFecha.Value.Month.ToString() + "-" + dtpFecha.Value.Day.ToString();
+            int fec = cmbFecha.SelectedIndex + 1;
             try
             {
                 Decimal total = 0;
@@ -46,7 +46,7 @@ namespace IngSoft.Interfaces
                 }
                 else
                 {
-                    MessageBox.Show("Error al verificar el reporte");
+                    MessageBox.Show("No hay datos correspondientes al mes seleccionado");
                 }
 
             }
@@ -74,7 +74,7 @@ namespace IngSoft.Interfaces
 
         private void Reporte_de_Productos_Vendidos_Load(object sender, EventArgs e)
         {
-
+            cmbFecha.SelectedText = "Enero";
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

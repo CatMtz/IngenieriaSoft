@@ -49,7 +49,7 @@
             this.ButtonEditar.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.ButtonEditar.Name = "ButtonEditar";
             this.ButtonEditar.Size = new System.Drawing.Size(109, 31);
-            this.ButtonEditar.TabIndex = 19;
+            this.ButtonEditar.TabIndex = 4;
             this.ButtonEditar.Text = "Editar";
             this.ButtonEditar.UseVisualStyleBackColor = false;
             this.ButtonEditar.Click += new System.EventHandler(this.ButtonEditar_Click);
@@ -64,7 +64,7 @@
             this.buttonsalir.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.buttonsalir.Name = "buttonsalir";
             this.buttonsalir.Size = new System.Drawing.Size(107, 30);
-            this.buttonsalir.TabIndex = 18;
+            this.buttonsalir.TabIndex = 5;
             this.buttonsalir.Text = "Salir";
             this.buttonsalir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonsalir.UseVisualStyleBackColor = false;
@@ -112,7 +112,7 @@
             this.txtDireccion.MaxLength = 40;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(226, 20);
-            this.txtDireccion.TabIndex = 13;
+            this.txtDireccion.TabIndex = 3;
             // 
             // txttelefono
             // 
@@ -121,7 +121,7 @@
             this.txttelefono.MaxLength = 10;
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(179, 20);
-            this.txttelefono.TabIndex = 12;
+            this.txttelefono.TabIndex = 2;
             // 
             // txtNombre
             // 
@@ -130,7 +130,7 @@
             this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(144, 20);
-            this.txtNombre.TabIndex = 10;
+            this.txtNombre.TabIndex = 1;
             // 
             // pictureBox1
             // 

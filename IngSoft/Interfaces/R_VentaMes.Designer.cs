@@ -33,9 +33,10 @@ namespace IngSoft.Interfaces
             this.label1 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.DTPFecha = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonVerificar = new System.Windows.Forms.Button();
+            this.cmbFecha = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@ namespace IngSoft.Interfaces
             this.ButtonSalir.Location = new System.Drawing.Point(420, 404);
             this.ButtonSalir.Name = "ButtonSalir";
             this.ButtonSalir.Size = new System.Drawing.Size(108, 26);
-            this.ButtonSalir.TabIndex = 10;
+            this.ButtonSalir.TabIndex = 4;
             this.ButtonSalir.Text = "Salir";
             this.ButtonSalir.UseVisualStyleBackColor = false;
             this.ButtonSalir.Click += new System.EventHandler(this.ButtonSalir_Click);
@@ -80,7 +81,7 @@ namespace IngSoft.Interfaces
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(162, 20);
-            this.txtTotal.TabIndex = 8;
+            this.txtTotal.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -91,15 +92,6 @@ namespace IngSoft.Interfaces
             this.pictureBox1.Size = new System.Drawing.Size(233, 123);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
-            // 
-            // DTPFecha
-            // 
-            this.DTPFecha.CalendarFont = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPFecha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPFecha.Location = new System.Drawing.Point(18, 57);
-            this.DTPFecha.Name = "DTPFecha";
-            this.DTPFecha.Size = new System.Drawing.Size(271, 25);
-            this.DTPFecha.TabIndex = 22;
             // 
             // comboBox1
             // 
@@ -114,12 +106,43 @@ namespace IngSoft.Interfaces
             this.buttonVerificar.Location = new System.Drawing.Point(110, 92);
             this.buttonVerificar.Name = "buttonVerificar";
             this.buttonVerificar.Size = new System.Drawing.Size(75, 23);
-            this.buttonVerificar.TabIndex = 23;
-            this.buttonVerificar.Text = "Verificar";
+            this.buttonVerificar.TabIndex = 2;
             this.buttonVerificar.UseVisualStyleBackColor = true;
             this.buttonVerificar.Click += new System.EventHandler(this.button1_Click);
             this.buttonVerificar.MouseLeave += new System.EventHandler(this.buttonVerificar_MouseLeave);
             this.buttonVerificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.buttonVerificar_MouseMove);
+            // 
+            // cmbFecha
+            // 
+            this.cmbFecha.FormattingEnabled = true;
+            this.cmbFecha.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.cmbFecha.Location = new System.Drawing.Point(72, 65);
+            this.cmbFecha.Name = "cmbFecha";
+            this.cmbFecha.Size = new System.Drawing.Size(145, 21);
+            this.cmbFecha.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(123, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 17);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Mes";
             // 
             // R_VentaMes
             // 
@@ -127,8 +150,9 @@ namespace IngSoft.Interfaces
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(539, 448);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbFecha);
             this.Controls.Add(this.buttonVerificar);
-            this.Controls.Add(this.DTPFecha);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grvVenta);
             this.Controls.Add(this.ButtonSalir);
@@ -154,7 +178,8 @@ namespace IngSoft.Interfaces
         
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker DTPFecha;
         private System.Windows.Forms.Button buttonVerificar;
+        private System.Windows.Forms.ComboBox cmbFecha;
+        private System.Windows.Forms.Label label2;
     }
 }

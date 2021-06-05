@@ -42,7 +42,7 @@
             this.btnSalir.Location = new System.Drawing.Point(602, 255);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 27);
-            this.btnSalir.TabIndex = 0;
+            this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.button1_Click);
@@ -65,7 +65,7 @@
             this.textBox1.Location = new System.Drawing.Point(75, 257);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(247, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 1;
             // 
             // grvdeudas
             // 
