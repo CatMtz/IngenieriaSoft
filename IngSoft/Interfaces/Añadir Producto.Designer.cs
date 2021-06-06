@@ -192,8 +192,6 @@ namespace IngSoft.Interfaces
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button agregar;
         private System.Windows.Forms.Button Salir;
     }
