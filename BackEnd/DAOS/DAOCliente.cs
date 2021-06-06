@@ -174,7 +174,6 @@ namespace BackEnd.DAOS
 
 
 
-
         public bool Eliminar(int id)
         {
             try
@@ -196,6 +195,7 @@ namespace BackEnd.DAOS
             }
 
         }
+
 
     }
 }
