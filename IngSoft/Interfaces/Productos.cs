@@ -83,6 +83,9 @@ namespace IngSoft.Interfaces
                 {
                     MessageBox.Show("Se elimino con exito el producto");
                     actualizar();
+                }else
+                {
+                    MessageBox.Show("Hubo un error al eliminar el producto");
                 }
 
             }
