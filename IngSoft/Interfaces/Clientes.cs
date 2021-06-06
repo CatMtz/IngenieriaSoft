@@ -64,12 +64,15 @@ namespace IngSoft.Interfaces
             }
             if (e.ColumnIndex == 6)
             {
-                //int valorCelda = int.Parse(grvClientes.Rows[grvClientes.CurrentRow.Index].Cells[0].Value.ToString());
-                //if (new DAOProducto().Eliminar(valorCelda))
-                //{
-                //    MessageBox.Show("Se elimino con exito el producto");
-                //    actualizar();
-                //}
+                int valorCelda = int.Parse(grvClientes.Rows[grvClientes.CurrentRow.Index].Cells[0].Value.ToString());
+                if (new DAOCliente().Eliminar(valorCelda))
+                {
+                    MessageBox.Show("Se elimino con exito el cliente");
+                    actualizar();
+                }else
+                {
+                    MessageBox.Show("No se puede eliminar el cliente hasta que todas las deudas esten saldadas");
+                }
 
             }
         }
