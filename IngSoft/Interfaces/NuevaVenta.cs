@@ -87,7 +87,7 @@ namespace IngSoft.Interfaces
 
             try
             {
-                Venta ven = new Venta(idgerent, cmbCliente.SelectedIndex + 1, cmbProducto.Text,
+                Venta ven = new Venta(idgerent, listaClientes[cmbCliente.SelectedIndex].IdCliente, cmbProducto.Text,
                                     (Decimal.Parse(txtPrecio.Text)), cmbTipo.Text,
                                     (Decimal.Parse(txtPrecio.Text) * nupCantidad.Value));
                 Detalleproducto det = new Detalleproducto(Decimal.Parse(txtPrecio.Text),

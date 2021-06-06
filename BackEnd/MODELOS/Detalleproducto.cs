@@ -12,6 +12,8 @@ namespace BackEnd.MODELOS
         public int Cantidad { get; set; }
         public int IdCompra { get; set; }
         public int IdProducto { get; set; }
+        public int idCliente { get; set; }
+        public String nombreproducto { get; set; }
 
         public Detalleproducto() { }
 

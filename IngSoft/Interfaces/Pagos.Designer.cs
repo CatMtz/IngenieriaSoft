@@ -42,6 +42,8 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.btnAbonar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbproductos = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grvPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -187,12 +189,32 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // cmbproductos
+            // 
+            this.cmbproductos.FormattingEnabled = true;
+            this.cmbproductos.Location = new System.Drawing.Point(437, 343);
+            this.cmbproductos.Name = "cmbproductos";
+            this.cmbproductos.Size = new System.Drawing.Size(232, 21);
+            this.cmbproductos.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(309, 344);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(131, 20);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Productos en deuda";
+            // 
             // Pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(771, 473);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cmbproductos);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAbonar);
             this.Controls.Add(this.txtDireccion);
@@ -234,5 +256,7 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button btnAbonar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cmbproductos;
+        private System.Windows.Forms.Label label6;
     }
 }

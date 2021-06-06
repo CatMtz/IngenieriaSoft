@@ -70,6 +70,40 @@ namespace BackEnd.DAOS
                 return null;
             }
         }
+
+
+        public List<Detalleproducto> getdetalle(int id)
+        {
+            try
+            {
+                List<Detalleproducto> lista = new List<Detalleproducto>();
+                ConexionMySQL con = new ConexionMySQL();
+
+                DataSet dat = con.LLenaComboGrid("select dp.idcompra,dp.idproducto,v.descripcion,c.idcliente "+
+                   " from detalleproducto dp join Venta v on dp.idcompra=v.idcompra "+
+                    "join cliente c on v.idcliente = c.idcliente where c.idcliente= " + id + ";");
+                DataTable dt = dat.Tables[0];
+                Detalleproducto datos;
+                foreach (DataRow r in dt.Rows)
+                {
+                    datos = new Detalleproducto();
+                    datos.IdCompra = (int)r.ItemArray[0];
+                    datos.IdProducto = (int)r.ItemArray[1];
+                    datos.nombreproducto = (String)r.ItemArray[2];
+                    datos.idCliente = (int)r.ItemArray[3];
+                    lista.Add(datos);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
+
         public bool editar(Producto obj, int id)
         {
             try

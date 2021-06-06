@@ -40,12 +40,13 @@ namespace IngSoft.Interfaces
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-          Producto nuevo = new Producto(txtNombre.Text, Decimal.Parse(txtPrecio.Text), txtDescripcion.Text,txtCategoria.Text);
+         
             if (txtNombre.Text != "" && txtPrecio.Text != "" && txtDescripcion.Text != "" && txtCategoria.Text != "")
             {
-                if (verificarNombre(nuevo.Nombre) && verificarCategoria(nuevo.Categoria)
-                && verificarDescripcion(nuevo.Descripcion) && verificarPrecio("" + nuevo.Precio))
+                if (verificarNombre(txtNombre.Text) && verificarCategoria(txtCategoria.Text)
+                && verificarDescripcion(txtDescripcion.Text) && verificarPrecio(txtPrecio.Text))
                 {
+                    Producto nuevo = new Producto(txtNombre.Text, Decimal.Parse(txtPrecio.Text), txtDescripcion.Text, txtCategoria.Text);
                     if (new DAOProducto().editar(nuevo, id))
                     {
                         MessageBox.Show("Actualización exitosa");
