@@ -62,9 +62,34 @@ namespace IngSoft.Interfaces
                    
                 }
                 txtDeudatotal.Text = "$"+total;
-                
-            }else
+
+                List<Detalleproducto> det = new DAOProducto().getdetalle(idcliente);
+                List<String> nombres = new List<String>();
+
+                foreach (Detalleproducto detp in det)
+                {
+                    nombres.Add(detp.IdCompra + " " + detp.nombreproducto);
+                }
+
+                cmbproductos.DataSource = nombres;
+
+
+
+            }
+            else
             {
+
+                List<Detalleproducto> det = new DAOProducto().getdetalle(idcliente);
+                List<String> nombres = new List<String>();
+                
+                foreach (Detalleproducto detp in det)
+                {
+                    nombres.Add(detp.IdCompra+" "+detp.nombreproducto);
+                }
+
+                cmbproductos.DataSource = nombres;
+
+               
 
             }
             Cliente datos = new DAOCliente().getOne(idcliente);
@@ -86,48 +111,99 @@ namespace IngSoft.Interfaces
 
         private void btnAbonar_Click(object sender, EventArgs e)
         {
+
+            List<Pago> datospago = new DAOPago().getAll(idcliente);
             try
             {
-                Pago pag = new Pago();
-                int valorCelda = int.Parse(grvPagos.Rows[grvPagos.CurrentRow.Index].Cells[0].Value.ToString());
-                if (txtCantidad.Text != null)
+
+                if (datospago.Count == 0)
                 {
-                    if (verificarPrecio(txtCantidad.Text))
+                    Pago pag = new Pago();
+                    int valor = int.Parse(cmbproductos.SelectedValue.ToString().Substring(0, 2));
+
+                    if (txtCantidad.Text != "")
                     {
-                        pag = new Pago(valorCelda, Decimal.Parse(txtCantidad.Text));
-                    }
-                }
-                if ((int.Parse(grvPagos.Rows[grvPagos.CurrentRow.Index].Cells[6].Value.ToString()) == 0))
-                {
-                    MessageBox.Show("No puede abonarse por que ya se liquidó la cuenta");
-                }
-                else if (pag.CantidadPago != 0)
-                {
-                    if (new DAOPago().registrar(pag))
-                    {
-                        MessageBox.Show("El pago se realizo con exito");
-                        txtCantidad.Text = "";
-                        actualizartabla();
+                        if (verificarPrecio(txtCantidad.Text))
+                        {
+                            pag = new Pago(valor, Decimal.Parse(txtCantidad.Text));
+                            if (pag.CantidadPago != 0)
+                            {
+                                if (new DAOPago().registrar(pag))
+                                {
+                                    MessageBox.Show("El pago se realizo con exito");
+                                    txtCantidad.Text = "";
+                                    actualizartabla();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No pudo realizarse el pago");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("No puede abonarse 0 pesos");
+                            }
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("No pudo realizarse el pago");
+                        MessageBox.Show("Coloque la cantidad a abonar (Solo numeros)");
                     }
+
                 }
                 else
                 {
-                    MessageBox.Show("No puede abonarse 0 pesos");
+                    try
+                    {
+
+
+                        Pago pag = new Pago();
+                        int valor = int.Parse(cmbproductos.SelectedValue.ToString().Substring(0, 2));
+
+                        if (txtCantidad.Text != "")
+                        {
+                            if (verificarPrecio(txtCantidad.Text))
+                            {
+                                pag = new Pago(valor, Decimal.Parse(txtCantidad.Text));
+                                if (pag.CantidadPago != 0)
+                                {
+                                    if (new DAOPago().registrar(pag))
+                                    {
+                                        MessageBox.Show("El pago se realizo con exito");
+                                        txtCantidad.Text = "";
+                                        actualizartabla();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("No pudo realizarse el pago");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No puede abonarse 0 pesos");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Coloque la cantidad a abonar (Solo numeros)");
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
                 }
             }
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
+
         }
-
-
-
         public void actualizartabla()
         {
             List<Pago> datospago = new DAOPago().getAll(idcliente);
@@ -163,6 +239,9 @@ namespace IngSoft.Interfaces
         private void btnSalir_MouseMove(object sender, MouseEventArgs e)
         {
             btnSalir.BackColor = Color.Red;
+         
+
+         
         }
 
         private void btnSalir_MouseLeave(object sender, EventArgs e)

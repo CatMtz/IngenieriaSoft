@@ -32,28 +32,29 @@ namespace IngSoft.Interfaces
 
         private void ButtonEditar_Click(object sender, EventArgs e)
         {
-            Cliente nuevo = new Cliente(txtNombre.Text, txttelefono.Text, txtDireccion.Text);
 
-
-            if(verificarCadena(nuevo.Nombre)&&verificarDireccion(nuevo.Direccion)
-                && verificarTel(nuevo.Telefono))
+            if (txtNombre.Text != "" && txtDireccion.Text != "" && txttelefono.Text != "")
             {
 
+                if (verificarCadena(txtNombre.Text) && verificarDireccion(txtDireccion.Text)
+                && verificarTel(txttelefono.Text))
+                {
 
-                if (new DAOCliente().editar(nuevo, id))
-                {
-                    MessageBox.Show("Actualización exitosa");
-                    this.Dispose();
+                    Cliente nuevo = new Cliente(txtNombre.Text, txttelefono.Text, txtDireccion.Text);
+                    if (new DAOCliente().editar(nuevo, id))
+                    {
+                        MessageBox.Show("Actualización exitosa");
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Ocurrio un error");
-                }
+
+
             }
-
-
         }
-
         private void buttonsalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
