@@ -43,7 +43,7 @@ namespace IngSoft.Interfaces
                     }
                 } else
                 {
-                    MessageBox.Show("Los espacios a excepción de telefono deben incluir solo letras (Maximo 30 carcateres)");
+                    MessageBox.Show("Los espacios, a excepción de telefono deben incluir solo letras (Maximo 30 carcateres)");
                 }
 
             } else

@@ -119,7 +119,7 @@ namespace IngSoft.Interfaces
         public bool verificarCategoria(String Categoria)
         {
             Regex rex = new Regex("^[a-zA-Z\\s]{1,15}$");
-            if (rex.IsMatch(Categoria))
+            if (rex.IsMatch(Categoria.Trim()))
             {
                 return true;
             }
