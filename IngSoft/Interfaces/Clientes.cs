@@ -69,7 +69,8 @@ namespace IngSoft.Interfaces
                 {
                     MessageBox.Show("Se elimino con exito el cliente");
                     actualizar();
-                }else
+                }
+                else
                 {
                     MessageBox.Show("No se puede eliminar el cliente hasta que todas las deudas esten saldadas");
                 }
