@@ -172,5 +172,30 @@ namespace BackEnd.DAOS
 
         }
 
+
+
+
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                MySqlConnection conexion = new MySqlConnection(new ConexionMySQL().GetConnectionString());
+                conexion.Open();
+                String consulta = "Delete from cliente where idcliente='" + id + "';";
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexion;
+                comando.CommandText = consulta;
+                int regafectados = comando.ExecuteNonQuery();
+                conexion.Close();
+                return (regafectados > 0);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
     }
 }
